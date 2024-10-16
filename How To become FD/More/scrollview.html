@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollview</title>
+    <style>
+        .myDiv {
+            height: 250px;
+            width: 200px;
+            overflow: auto;
+        }
+
+        #content {
+           height: 800px;
+           width: 2000px;
+           margin: 500px;
+           background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Scroll View() in JS</h2>
+    <button onclick="myFun()" id="scroll">scroll</button>
+
+    <div class="myDiv">
+        <div id="content">
+            <p>some text....</p>
+            <p>some text....</p>
+            <p>some text....</p>
+
+        </div>
+    </div>
+
+    <script>
+        function myFun() {
+            const el = document.getElementById("content");
+            console.log(el);
+            el.scrollIntoView();
+        }
+    </script>
+
+</body>
+
+</html>

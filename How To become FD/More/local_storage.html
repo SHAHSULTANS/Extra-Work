@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage with Input</title>
+</head>
+<body>
+    <h2>Dynamic Array Update</h2>
+    
+    <!-- Input field to get user input -->
+    <input type="text" id="userInput" placeholder="Enter a name">
+    
+    <!-- Button to add input value to array -->
+    <button id="addButton">Add to Array</button>
+
+    <script>
+        // Initialize or get the existing array from localStorage
+        let userArray = JSON.parse(localStorage.getItem("userarray")) || [];
+
+        // Function to update localStorage
+        function updateLocalStorage() {
+            userArray.sort();
+            localStorage.setItem("userarray", JSON.stringify(userArray));
+        }
+
+        // Handle the button click to add input value to the array
+        document.getElementById("addButton").addEventListener("click", function() {
+            const inputValue = document.getElementById("userInput").value;
+
+            if (inputValue) {
+                // Add the input value to the array
+                userArray.push(inputValue);
+                
+                // Update the localStorage with the new array
+                updateLocalStorage();
+                
+                // Clear the input field
+                document.getElementById("userInput").value = '';
+                
+                // Optional: Log the updated array to the console
+                console.log(userArray);
+            } else {
+                alert("Please enter a value!");
+            }
+        });
+
+        // Initial update to localStorage (optional if you want to ensure it's set on load)
+        updateLocalStorage();
+
+    </script>
+</body>
+</html>

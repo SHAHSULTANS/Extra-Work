@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="downloadBtn">Download File</button>
+
+    <script>
+        document.getElementById("downloadBtn").addEventListener("click",function(){
+            //console.log("YES");
+
+            let a=document.createElement("a");
+            a.href="1111.jpg";
+            a.download="1111.jpg";
+            console.log(a);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+           //document.body.appendChild(a.download);
+        });
+    </script>
+    
+</body>
+</html>

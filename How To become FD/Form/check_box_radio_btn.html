@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox & radio button</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <input type="checkbox" name="check" id="cbox">
+        <label for="cbox">Subscribe</label>
+
+
+        <h2>Select SIM Card</h2>
+        <input type="radio" name="same" id="banglalink">
+        <label for="banglalink">Banglalink</label><br>
+
+        <input type="radio" name="same" id="robi">
+        <label for="robi">Robi</label><br>
+
+        <input type="radio" name="same" id="airtel">
+        <label for="airtel">Airtel</label>
+
+    </div>
+
+    <input type="submit" name="submit" id="submit" style="padding: 8px;margin-top:5px;background-color:dodgerblue;color:white;border:none;cursor:pointer" onclick="myFun()">
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+
+
+
+    <script>
+        function myFun(){
+
+            const Subscribe=document.getElementById("cbox");
+            const bl=document.getElementById("banglalink");
+
+            if(Subscribe.checked){
+                console.log(Subscribe.checked);
+                document.getElementById("demo").innerHTML="You are subscribe";
+                
+            }
+            else{
+                document.getElementById("demo").innerHTML="You are not subscribe";
+                
+
+            }
+
+            if(bl.checked){
+                document.getElementById("demo1").innerHTML="You clicked bl";
+                
+            }
+            //Similar for all other sim  card
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

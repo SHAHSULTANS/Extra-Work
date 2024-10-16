@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Paragraph Text</title>
+</head>
+<body>
+
+    <h1>Select Paragraph's Text</h1>
+    <p id="myParagraph">This is the paragraph text that will be selected.</p>
+    <button onclick="selectParagraphText()">Select Text</button>
+
+    <script>
+        function selectParagraphText() {
+            // Get the paragraph element
+            var paragraph = document.getElementById('myParagraph');
+            
+            // Create a range object
+            var range = document.createRange();
+             
+            // Select the text content of the paragraph
+            range.selectNodeContents(paragraph);
+            
+            // Get the current selection
+            var selection = window.getSelection();
+            
+            // Remove any existing selections
+            selection.removeAllRanges();
+            
+            // Add the new range to the selection
+            selection.addRange(range);
+            
+            if (document.execCommand('copy')) {
+                 alert('Text copied to clipboard');
+            }
+//This is the paragraph text that will be selected.
+            
+            
+        }
+    </script>
+
+</body>
+</html>

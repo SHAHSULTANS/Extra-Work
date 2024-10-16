@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin:0;
+        }
+        .container{
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .numbertext{
+            position: absolute;
+            top: 10px;
+            padding: 16px;
+            color: white;
+        }
+        .next,.prev{
+            position:absolute;
+            top: 50%;
+            padding: 14px;
+            color: white;
+            margin-top: -77px;
+            width: auto;
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+        .next{
+            float: right;
+            right: 0;
+            
+        }
+        .prev{
+            float: right;
+        }
+        .caption-container{
+            background-color: #333;
+            font-size: 18px;
+            padding: 2px 12px;
+            text-align: center;
+            color: white;
+            
+
+        }
+       
+        .mySlides img {
+            display: block; /* Remove default inline spacing */
+           
+        }
+        .row{
+            display: flex;
+        }
+        .column{
+            width: 16.7%;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        .column:hover{
+            opacity: 1;
+        }
+        .row .active{
+            opacity: 1;
+        }
+        
+       
+    </style>
+
+   
+</head>
+<body>
+
+
+    <div class="container"> 
+        <div class="mySlides">
+            <div class="numbertext">1/6</div>
+            <img src="img_snow_wide.jpg" alt="img_snow_wide" style="width: 100%;">
+
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2/6</div>
+            <img src="img_nature_wide.jpg" alt="img_nature_wide" style="width: 100%;">
+
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3/6</div>
+            <img src="img_mountains_wide.jpg" alt="img_mountains_wide" style="width: 100%;">
+
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4/6</div>
+            <img src="img_lights_wide.jpg" alt="img_lights_wide" style="width: 100%;">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">5/6</div>
+            <img src="img_5terre_wide.jpg" style="width: 100%;" alt="img_5terre_wide">
+
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">6/6</div>
+            <img src="img_woods_wide.jpg" style="width: 100%;" alt="img_woods_wide">
+        </div>
+
+
+
+
+        <a class="prev" onclick="update(-1)">❮</a>
+        <a class="next" onclick="update(1)">❯</a> 
+
+
+
+
+
+
+        <div class="caption-container">
+            <p id="caption">caption</p>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="column" onclick="current(1)">
+                <img src="img_snow_wide.jpg" alt="img_snow_wide" style="width: 100%;">
+            </div>
+    
+            <div class="column" onclick="current(2)">
+                <img src="img_nature_wide.jpg" alt="img_nature_wide" style="width: 100%;">
+            </div>
+    
+            <div class="column"  onclick="current(3)">
+                <img src="img_mountains_wide.jpg" alt="img_mountains_wide" style="width: 100%;">
+            </div>
+            <div class="column"  onclick="current(4)">
+                <img src="img_lights_wide.jpg" alt="img_lights_wide" style="width: 100%;">
+               
+            </div>
+            <div class="column"  onclick="current(5)">
+                <img src="img_5terre_wide.jpg" style="width: 100%;" alt="img_5terre_wide">
+            </div>
+            <div class="column"  onclick="current(6)">
+                <img src="img_woods_wide.jpg" style="width: 100%;" alt="img_woods_wide">
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+
+    <script>
+        var slideIndex=1;
+        showSlides(slideIndex);
+
+        function update(n){
+
+            slideIndex+=n;
+            showSlides(slideIndex);
+
+        }
+
+
+        function current(n){
+            showSlides(n);
+        }
+
+        function showSlides(n){
+            var slides=document.getElementsByClassName("mySlides");
+
+            var cap=document.querySelectorAll(".column img");
+
+            var act=document.getElementsByClassName("column");
+
+            //console.log(act[0].className);
+            //console.log(cap[0]);
+
+
+            if(n>slides.length){
+                n=1;
+                slideIndex=1;
+            }
+            if(n<1){
+                n=slides.length;
+                slideIndex=n;
+            }
+            for(var i=0;i<slides.length;i++){
+                slides[i].style.display="none";
+                act[i].className=act[i].className.replace(" active","");
+
+
+
+            }
+
+
+
+            slides[n-1].style.display="block";
+
+            document.getElementById("caption").innerHTML=cap[n-1].alt;
+
+            act[n-1].className+=" active";
+           
+                
+        }
+
+         
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

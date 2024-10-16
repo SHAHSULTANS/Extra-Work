@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup Chatbox</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .chat{
+            position: absolute;
+            right: 16px;
+            bottom:15px;
+            padding: 12px 16px;
+            width: 15%;
+            background-color: rgba(22, 22, 253, 0.707);
+            border: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 6px;
+            width: 176px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .btn{
+            padding: 12px 16px;
+            width: 100%;
+            margin-top: 8px;
+            cursor: pointer;
+            border:none;
+            color: white;
+            font-size: 17px;
+            border-radius: 6px;
+            
+        }
+       
+        .submit{
+            background-color: dodgerblue;
+        }
+        .close{
+            background-color: red;
+        }
+        .popup{
+            background-color: bisque;
+            position: absolute;
+            padding: 5px;
+            right: 15px;
+            bottom: 15px;
+            display: none;
+            z-index: 2;
+            
+        }
+        textarea{
+            border: none;
+        }
+        
+
+        @media screen and (max-width:500px), (max-height:320px) {
+            .popup{
+                position: static;
+                text-align: center;
+            }
+            .chat{
+                position: static;
+                
+            }
+            
+            
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1>Popup Chat Window</h1>
+    <p>Click the button at the bottom of this page to open the chat form.</p>
+
+
+    <button class="chat bt" onclick="openChat()">Chat</button>
+    
+    <div class="popup">
+        <h2>Chat</h2>
+        <p>Message</p>
+        <textarea name="messenger" id="messenger" rows="10" cols="20" placeholder="some text.."></textarea><br>
+
+        <button class="submit btn">Send</button><br>
+        <button class="close btn" onclick="this.parentElement.style.display='none';">Close</button>
+    </div>
+
+
+    <script>
+        function bondo(){
+            console.log(document.getElementsByClassName("close")[0].parentElement.offsetWidth);
+        }
+
+        function openChat(){
+            let pop=document.querySelector(".popup");
+            if(pop.style.display=="none"||pop.style.display==""){
+                pop.style.display="block";
+            }
+            
+        }
+
+
+         
+    </script>
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal login form</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 15px;
+        }
+        .image{
+            height: 300px;
+            width: 300px;
+            margin: auto;
+           
+            
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            
+        }
+        label{
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input[type=text],input[type=submit],input[type=password]{
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 6px;
+            font-size: 16px;
+
+        }
+        button,input[type=submit]{
+            cursor: pointer;
+        }
+
+        .underneath{
+            background-color: bisque;
+            padding: 18px 8px;
+        }
+        .underneath span,a{
+            float: right;
+        }
+        input[type=submit]{
+            background-color: dodgerblue;
+            border: none;
+            color: white;
+        }
+        .btn{
+            padding: 12px 16px;
+            border: none;
+            background-color: red;
+            color: white;
+            font-size: 17px;
+        }
+        .modal{
+            display: none;
+            position: fixed;
+            max-width: 100%;
+            padding: 8px;
+            padding-top: 60px;
+            height: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(221, 221, 221, 0.628);
+            overflow: auto;
+            animation: example;
+            animation-duration: 1.4s;
+            animation-timing-function: ease-in-out;
+
+        
+        
+        }
+        @keyframes example {
+            from{opacity: 0.4;}
+            to{opacity: 1;}
+            
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        .modal .cross{
+            position: absolute;
+            right: 12px;
+            top: 10px;
+            font-weight: bold;
+            font-size: 40px;
+        }
+       
+       
+    </style>
+</head>
+<body>
+    <h1>Modal Login Form</h1>
+
+    <button onclick="myFun()">Login</button>
+
+    <div class="modal" id="id01">
+        <span class="cross" onclick="this.parentElement.style.display='none'">&times;</span>
+
+        <form action="">
+            <div class="image">
+                <img src="avatar.jpeg" alt="profile pic">
+            </div>
+
+            <div class="infomation">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter name...">
+
+                <label for="psw">Password</label>
+                <input type="password" id="psw" name="psw" placeholder="Enter password..">
+
+                <input type="submit" value="Login">
+                <input type="checkbox" checked="checked">
+                <span>Remember Me</span>
+            </div>
+
+            <div class="underneath">
+                <button  class="btn">Cancel</button>
+                <a href="#">Password?</a>
+                <span>Forgot</span>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script>
+        function myFun(){
+            let modal=document.getElementById("id01");
+            if(modal.style.display=="none"||modal.style.display==""){
+                modal.style.display="block";
+            }
+        }
+    </script>
+    
+</body>
+</html>

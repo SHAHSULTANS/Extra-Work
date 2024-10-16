@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google-like Search</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        } 
+        
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+        
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #suggestions-list {
+            position: absolute;
+            top: 40px;
+            width: calc(100% - 20px);
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 150px;
+            overflow-y: auto;
+            padding-left: 0;
+            list-style-type: none;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        #suggestions-list li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        #suggestions-list li:hover {
+            background-color: #f1f1f1;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+        <button id="search-button">Search</button>
+        <ul id="suggestions-list"></ul>
+    </div>
+    <script >
+        document.addEventListener("DOMContentLoaded", function() {  
+            const searchInput = document.getElementById("search-input");
+            const searchButton = document.getElementById("search-button");
+            const suggestionsList = document.getElementById("suggestions-list");
+        
+            // Load search history from local storage
+            const searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+        
+            // Function to display search suggestions
+            function displaySuggestions(input) {
+                const filteredSuggestions = searchHistory.filter(term => term.toLowerCase().includes(input.toLowerCase()));
+                suggestionsList.innerHTML = "";  // Clear previous suggestions
+        
+                if (filteredSuggestions.length > 0 && input !== "") {
+                    suggestionsList.style.display = "block";
+                    filteredSuggestions.forEach(term => {
+                        const li = document.createElement("li");
+                        li.textContent = term;
+                        suggestionsList.appendChild(li);
+                    });
+                } else {
+                    suggestionsList.style.display = "none";
+                }
+            }
+        
+            // Function to add a search term to history
+            function addToHistory(term) {
+                if (term && !searchHistory.includes(term)) {  // Avoid duplicates
+                    searchHistory.push(term);
+                    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+                }
+            }
+        
+            // Event listener for search input (typing)
+            searchInput.addEventListener("input", function() {
+                const input = searchInput.value.trim();
+                displaySuggestions(input);
+            });
+        
+            // Event listener for search button
+            searchButton.addEventListener("click", function() {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    addToHistory(searchTerm);
+                    searchInput.value = "";  // Clear input after search
+                    suggestionsList.style.display = "none";  // Hide suggestions
+                }
+            });
+        
+            // Event listener for selecting a suggestion
+            suggestionsList.addEventListener("click", function(e) {
+                if (e.target.tagName === "LI") {
+                    searchInput.value = e.target.textContent;
+                    suggestionsList.style.display = "none";  // Hide suggestions
+                }
+            });
+        
+            // Hide suggestions list when clicking outside
+            document.addEventListener("click", function(e) {
+                if (!searchInput.contains(e.target) && !suggestionsList.contains(e.target)) {
+                    suggestionsList.style.display = "none";
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>

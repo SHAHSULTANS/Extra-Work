@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .header{
+            border: 1px solid red;
+            padding: 15px;
+            background-color: violet;
+            color:honeydew;
+        }
+
+        [class*='col-']{
+            float: left;
+            padding: 15px;
+            border: 1px solid red;
+        }
+        .row::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+
+        .col-1{width: 8.33%;}
+        .col-2{width:16.66;}
+        .col-3{width: 25%;}
+        .col-4{width: 33.33%;}
+        .col-5{width: 41.66%;}
+        .col-6{width: 50%;}
+        .col-7{width: 58.33%;}
+        .col-8{width: 66.66%;}
+        .col-9{width: 75%;}
+        .col-10{width: 83.33%;}
+        .col-11{width: 91.66%;}
+        .col-12{width: 100%;}
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+          }
+        .menu li{
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color:fuchsia;
+            color:aliceblue;
+            box-shadow: 0px 1px 3px salmon, 0 1px 2px salmon;
+        }
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <div class="header">
+        <h1>Responsive Web Grid</h1>
+
+    </div>
+    <div class="row">
+
+        <div class="col-3 menu">
+            <ul>
+                <li>The Fight</li>
+                <li>The city</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+
+        </div>
+        <div class="col-9">
+            <h1>The city</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos obcaecati et veniam, quo voluptate laborum nam. Reiciendis quas quos, nemo adipisci, ad sit non tenetur similique aliquam quia fugit exercitationem.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, nesciunt, delectus qui quia eum molestiae in praesentium commodi voluptate dolores modi iusto, ipsum facere laudantium quidem! Iure expedita sed sit.</p>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

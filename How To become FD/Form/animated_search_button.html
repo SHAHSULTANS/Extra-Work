@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated search button</title>
+
+    <style>
+
+        .container{
+            position: relative;
+        }
+        #search{
+            padding: 8px;
+            width: 30%;
+            padding-left: 40px;
+            font-size: 18px;
+            transition:1.4s;
+        }
+        span{
+            position: absolute;
+            left: 0;
+            top: -4px;
+           
+            font-size: 30px;
+        }
+        #search:focus{
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Amimated search button</h1>
+
+    <form action="">
+        <div class="container">
+            <input type="search" name="search" id="search">
+            <span>&#x1F50D;</span>
+        </div>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+    //Set are Objects.
+    //typeof setname ------>Return object.
+
+
+        //passing an array to new Set() method.
+        //create an empty set and use add() to add values.
+
+        // we can add value to set and or variable to set using add() method.
+
+
+        //we can iterate set value using for...of loop. 
+        //clear() mehtod remove all elements.
+        //delete() method romoves specified value.
+        //forEach() method invokes a function for each set element.//syn: set.forEach(callback);
+
+        //keys() method return an iterable objects with all the values in a set. same as value() method.
+
+        //has() return true if value exists.
+
+        //entries() method return an Iterable with(key, value ) pairs from a Set.A set no keys, so the entries method return[value,value].
+        
+
+        const letter=new Set(["a","b","c","c"]);
+
+        let text="";
+        for(x of letter){
+            text+=x+"<br>";
+        }
+
+        /*
+        letter.forEach(function(value){
+            text+=value;
+        })
+        */
+
+        /*
+        for(let x of letter.keys()){
+            text+=x;
+        }
+        */
+
+        for(let x of letter.entries()){
+            text+=x+"<br>";
+        }
+
+
+
+        document.getElementById("demo").innerHTML="The set has "+letter.size+" values & they are <br>"+text;
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding-bottom: 2000px;
+        }
+        .nav{
+            display: flex;
+            background-color: #333;
+        }
+        .nav a{
+            text-decoration: none;
+            padding: 14px 16px;
+            color: white;
+            font-size: 18px;
+        }
+        .dropBtn{
+            padding: 14px 16px;
+            border: none;
+            background-color: inherit;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .content{
+            position:absolute;
+            width: 160px;
+            background-color: #333;
+            display: none;
+           
+            
+        }
+        .content a{
+            display: block;
+            color: red;
+        }
+        .nav .icon {
+        
+          position:absolute;
+          top: 10px;
+          right: 0;
+          display: none;
+
+        }
+        .nav a:hover, .dropBtn:hover{
+            background-color: #222;
+        }
+        .dropdown:hover .content{
+            display: block;
+        }
+        .nav a.active{
+            background-color: #04AA6A;
+        }
+        #three:hover{
+            background-color: #555;
+        }
+
+        
+       
+
+
+        @media screen and (max-width:600px) {
+            .nav{
+                flex-direction: column;
+            }
+            .content{
+                position: relative;
+               
+            }
+            .nav .icon{
+                display: block;
+            }
+            .nav :not(:first-child):not(:last-child){
+                display: none;
+                
+               
+            }
+            
+           
+            
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#"  class="active">Home</a>
+        <a href="#">News</a>
+        <a href="#" id="contact">Contact</a>
+        <div class="dropdown">
+            <button class="dropBtn">Dropdown &#9660;</button>
+
+            <div class="content">
+                <a href="#">Link1</a>
+                <a href="#">Link2</a>
+                <a href="#">Link3</a>
+            </div>
+        </div>
+
+
+        <a href="#">About</a>
+
+        <div class="icon">
+            <a href="#" id="three" onclick="myFun()">&#9776;</a>
+        </div>
+
+        
+    </div>
+    <h2>Responsive Sidebar nav</h2>
+    <p>Reszie the browser window and see how its works</p>
+    <p>Hover over the dropdown button to open the dropdown menu</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae a provident omnis, praesentium in repellat atque explicabo minus beatae sit laborum, error velit natus officia sequi porro non laboriosam. Consequatur.</p>
+
+
+
+
+
+
+
+
+    <script>
+        function myFun(){
+            let navlinks=document.querySelectorAll(".nav :not(:first-child):not(:last-child)");
+            console.log(navlinks);
+            navlinks.forEach(function(link){
+                
+                if(link.style.display=="none"|| link.style.display==""){
+                    link.style.display="block";
+                }
+                else{
+                    link.style.display="";
+                }
+                
+
+            });
+        }
+    </script>
+    
+</body>
+</html>

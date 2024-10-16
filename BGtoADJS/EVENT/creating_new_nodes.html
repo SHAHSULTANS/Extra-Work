@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">This is paragraph</p>
+    <div id="div1"></div>
+    <p id="p2">This is another paragraph</p>
+
+
+    <script>
+        const para=document.createElement("p");
+        const text=document.createTextNode("This is new. Just create it!!");
+
+        para.appendChild(text);
+
+        const el=document.getElementById("div1");
+        
+       // el.appendChild(para);
+
+
+
+        //remove existing element.
+        const rmv=document.getElementById("p2");
+        //rmv.remove();
+        rmv.replaceChild(para,rmv);
+
+
+        //replace
+       
+
+    </script>
+    
+</body>
+</html>

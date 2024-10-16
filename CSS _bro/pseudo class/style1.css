@@ -1,0 +1,12 @@
+/* li:hover{
+    color:yellow
+}
+li:not(:hover){
+    background-color: hsla(133, 86%, 53%, 0.973);
+} */
+
+
+
+li:nth-child(3n+2){
+    background-color: yellow;
+}

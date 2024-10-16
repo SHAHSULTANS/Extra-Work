@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width check</title>
+    <style>
+        .container{
+            
+            
+            overflow: hidden;
+               
+            animation-name: ex;
+            animation-duration: 1.1s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes ex {
+            from{opacity: 0.5;}
+            to{opacity: 1;}
+            
+        }
+        .content{
+            
+            width: 0;
+            transition: 1.5s;
+            
+            background-color: red;
+            overflow: hidden;
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <button onclick="myfun()">btn</button>
+    <div class="container">
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque optio quam ipsam at officiis temporibus iure aliquid. Perferendis dicta ea iste delectus blanditiis voluptatibus at quas ipsum, sapiente quidem nostrum.</p>
+        </div>
+    </div>
+
+    <script>
+        function myfun(){
+            document.querySelector(".content").style.width="100%";
+
+        }
+    </script>
+    
+</body>
+</html>

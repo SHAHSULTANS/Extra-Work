@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic drag and drop By Shanto</title>
+    <style>
+        body{
+            background-color: bisque;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+            top: 50px;
+            text-align: center;
+        }
+        #draggable{
+            width: 160px;
+            height: 160px;
+            background-color: aqua;
+            line-height: 160px;
+            cursor:move;
+        }
+        #dropArea{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            border: 2px dashed red;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #dropArea.over{
+            border: 2px dashed blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Basic drag and drop</h2>
+
+    <div id="dragContainer">
+        <div id="draggable" draggable="true">
+            Drag Me
+        </div>
+    </div>
+
+    <div id="dropArea">
+        Drop Here
+    </div>
+    
+    <script>
+        const draggable=document.getElementById("draggable");
+        const dropArea=document.getElementById("dropArea");
+
+
+        draggable.addEventListener("dragstart",(e)=>{
+            e.dataTransfer.setData("text/plain",e.target.id);
+            //console.log(e.target.id);
+            e.target.style.opacity="0.5";
+
+        });
+
+        draggable.addEventListener("dragend",(e)=>{
+            e.target.style.opacity="1.0";
+
+        });
+
+        dropArea.addEventListener("dragover",(e)=>{
+            e.preventDefault();
+            dropArea.classList.add("over");
+
+        });
+        dropArea.addEventListener("dragleave",(e)=>{
+            //e.preventDefault();
+            dropArea.classList.remove("over");
+
+        });
+
+        dropArea.addEventListener("drop",(e)=>{
+            e.preventDefault();
+
+            const data=e.dataTransfer.getData("text/plain");
+            //console.log(data);
+            const retrieveDragElement=document.getElementById(data);
+            dropArea.innerHTML="";
+            dropArea.appendChild(retrieveDragElement);
+
+        });
+
+
+    </script>
+</body>
+</html>

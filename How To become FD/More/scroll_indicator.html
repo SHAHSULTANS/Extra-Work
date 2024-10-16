@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll indicator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding-bottom: 2000px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #aaa;
+            padding: 13px 0;
+            position: fixed;
+            width: 100%;
+           
+        }
+
+        .indicator {
+            width: 100%;
+            background-color: #ccc;
+            z-index:11;/* here z index is not working because of parent child relative relatiion*/
+        }
+
+        .detect {
+            z-index:0;
+            width: 0%;
+            height: 6px;
+            background-color: dodgerblue;
+        }
+
+        #demo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Scroll Indicator</h1>
+        <div class="indicator">
+            <div class="detect">
+            </div>
+        </div>
+    </div>
+
+
+    <p id="demo"></p>
+
+
+    <script>
+        
+        window.onscroll=function(){
+            var id=document.getElementById("demo");
+
+            var sch=document.documentElement.scrollHeight;
+
+            var clh=document.documentElement.clientHeight;
+            var sctop=document.documentElement.scrollTop;
+
+            id.innerHTML=sch+" // "+clh + " top: "+sctop;
+
+
+            var cal=(sctop*100)/(sch-clh);
+
+            document.querySelector(".detect").style.width=cal+"%";
+            
+
+
+
+
+
+        }
+            
+    </script>
+
+
+</body>
+
+</html>

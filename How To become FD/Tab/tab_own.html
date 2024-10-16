@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab{
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .tab button{
+            padding: 12px 18px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            float: left;
+        }
+        .tab button:hover{
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        .tabcontent{
+            border: 1px solid #ccc;
+            border-top: none;
+            padding: 8px 16px;
+            display: none;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent{
+            animation: example 1s;
+        }
+
+        @keyframes example{
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+        .topright{
+            float: right;
+            font-size: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .topright:hover{
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="tab">
+        <button class="tablinks" onclick="myFun(event,'Dhaka')" id="defaultopen">Dhaka</button>
+        <button class="tablinks" onclick="myFun(event,'Tokyo')">Tokyo</button>
+        <button class="tablinks" onclick="myFun(event,'London')">London</button>
+    </div>
+
+    <div id="Dhaka" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h2>Dhaka</h2>
+        <p>Dhaka is the capital of BD</p>
+        
+
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan</p>
+
+    </div>
+    <div id="London" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h2>London</h2>
+        <p>London is the capital of England</p>
+
+    </div>
+
+    <script>
+        function myFun(evt,cityName){
+            //console.log(cityName);
+            var tabcontent=document.getElementsByClassName("tabcontent");
+            //console.log(tabcontent);
+            for(var i=0;i<tabcontent.length;i++){
+                tabcontent[i].style.display="none";
+            }
+
+            var tablinks=document.getElementsByClassName("tablinks");
+            //tablinks[0].className="";
+           //console.log(tablinks[0].className);
+
+           for(var i=0;i<tablinks.length;i++){
+                tablinks[i].className=tablinks[i].className.replace(" active","");
+           }
+
+            document.getElementById(cityName).style.display="block";
+            evt.currentTarget.className += " active";
+           // console.log(evt);
+
+        }
+
+        document.getElementById("defaultopen").click();
+    </script>
+    
+</body>
+</html>

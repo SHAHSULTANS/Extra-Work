@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .mySlideShow{
+            display: none;
+            
+        }
+        .container{
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        
+        .caption{
+            position: absolute;
+            bottom: 8px;
+            color:white;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+        .numbertext{
+            position: absolute;
+            color:white;
+            padding: 8px 16px;
+        }
+        .prev,.next{
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            margin-top: -22px;
+            font-size: 18px;
+            
+            
+           
+        }
+        .prev:hover,.next:hover{
+            background-color: #111;
+        }
+        .next{
+            right: 0;
+        }
+        .dot{
+            display:inline-block;
+            height: 15px;
+            width: 15px;
+            background-color:#aaa;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .active,.dot:hover{
+            background-color: aqua;
+        }
+        .fade{
+            animation-name: example;
+            animation-duration: 1.5s;
+        }
+        @keyframes example {
+            from {opacity: .4;}
+            to {opacity: 1;}
+            
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="mySlideShow fade">
+            <div class="numbertext">1/4</div>
+            <img src="img_nature_wide.jpg" alt="Nature" width="100%">
+            <div class="caption">Caption Text</div>
+        </div>
+
+        <div class="mySlideShow fade">
+            <div class="numbertext">2/4</div>
+            <img src="img_mountains_wide.jpg" alt="Nature" width="100%">
+            <div class="caption">Caption Text</div>
+        </div>
+
+        <div class="mySlideShow fade">
+            <div class="numbertext">3/4</div>
+            <img src="img_snow_wide.jpg" alt="Nature" width="100%">
+            <div class="caption">Caption Text</div>
+        </div>
+        <div class="mySlideShow fade">
+            <div class="numbertext">4/4</div>
+            <img src="img_lights_wide.jpg" alt="Nature" width="100%">
+            <div class="caption">Caption Text</div>
+        </div>
+
+
+        <div class="prev" onclick="Arrow(-1)">&#10094;</div>
+        <div class="next" onclick="Arrow(1)">&#10095;</div>
+
+
+
+    </div>
+
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+        var slideIndex=1;
+        showSlide(slideIndex);
+
+//-----------------------------------------------
+        //when we use setInterval or setTimeout don't need button
+
+        
+        function currentSlide(n){
+
+            slideIndex=n;
+            showSlide(slideIndex);
+        }
+        
+
+        function Arrow(n){
+            slideIndex+=n;
+            console.log(slideIndex);
+            showSlide(slideIndex);
+        }
+       
+
+        function showSlide(n){
+            let slides=document.getElementsByClassName("mySlideShow");
+            //console.log(slides);
+            let dot=document.getElementsByClassName("dot");
+
+            //slideIndex++;
+
+            console.log(slideIndex);
+
+            if(n>slides.length){
+                slideIndex=1;
+            }
+            if(n<1){
+                slideIndex=slides.length;
+            }
+            if(slideIndex>slides.length){
+                slideIndex=1;
+            }
+            
+
+
+            for(let i=0;i<slides.length;i++){
+                slides[i].style.display="none";
+                dot[i].className=dot[i].className.replace(" active","");
+                
+            }
+
+        
+
+
+            //console.log(slides[slideIndex]);
+            slides[slideIndex-1].style.display="block";
+            dot[slideIndex-1].className+=" active";
+
+
+
+
+
+        }
+        //Here  setInterval is also valid.
+
+        /*
+        setInterval(function() {
+            Arrow(1);
+        }, 2000);
+
+        */
+       
+
+        
+    </script>
+
+</body>
+</html>

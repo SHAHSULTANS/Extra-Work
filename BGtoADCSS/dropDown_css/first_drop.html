@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown{
+            display: inline-block;
+            /* use position for where we set up the drop*/
+        }
+        .dropContent{
+
+            display: none;
+            box-shadow: 10px 16px 10px 1px wheat;
+            position: fixed;
+            padding: 14px 15px;
+           
+        }
+        .dropdown:hover .dropContent{
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>Hoverable Dropdown</h2>
+    <p>Move the mouse over the text below to open the dropdown content</p>
+    <div class="dropdown">
+        <span>Mouse over me</span>
+        <div class="dropContent">
+            <p>Hellow world!!</p>
+        </div>
+    </div>
+    
+</body>
+</html>

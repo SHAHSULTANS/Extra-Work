@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select in HTML</title>
+</head>
+<body>
+    <select name="countries" id="countrySelect">
+        <option value="banglalink">Banglalink</option>
+        <option value="grammene">Grammene</option>
+        <option value="airtel">Airtel</option>
+        <option value="teletalk">Teletalk</option>
+    </select>
+
+    <button onclick="getSelectedValue()">Get Selected Value</button>
+
+    <script>
+        function getSelectedValue(){
+            const selectedElement=document.getElementById("countrySelect");
+
+            const value=selectedElement.value;
+
+            alert("Selected value "+value);
+        }
+
+    </script>
+    
+</body>
+</html>

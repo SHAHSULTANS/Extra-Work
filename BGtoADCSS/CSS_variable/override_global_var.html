@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --blue:#1e90ff;;
+            --white:#FFF;
+        }
+        body{
+            background-color: var(--blue);
+        }
+        h2{
+            border-bottom: 2px solid var(--blue);
+        }
+        .container{
+            color: var(--blue);
+            background-color: var(--white);
+            padding: 15px;
+        }
+        button{
+            --blue:#0000ff;/* override*/
+            --red:red;/*new local variable */
+            background-color: var(--white);
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Override Global Variable with Local Variable</h1>
+    <div class="container">
+        <h2>lorem ISpum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta saepe voluptate hic incidunt voluptatem, sequi, tenetur nesciunt eveniet voluptas dolore veritatis rerum suscipit ab placeat distinctio maxime ratione velit necessitatibus!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore accusantium minima sapiente ipsam maiores, libero repellat! Maxime architecto beatae, modi repellat, in sapiente tempora nobis delectus, ducimus repudiandae officiis voluptatem.</p>
+
+        <p>
+            <button>YES</button>
+            <button>NO</button>
+        </p>
+
+    </div>
+    
+</body>
+</html>

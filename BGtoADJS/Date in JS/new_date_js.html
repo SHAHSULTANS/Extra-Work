@@ -1,0 +1,52 @@
+
+
+<!-- //return a date object with the current date and time. -->
+
+<!-- Date Object are static . The clock is not running.
+ The computer clock is tricking, date object are not. -->
+
+
+ <!-- new Date(year,month,day,hours,minutes,seconds,ms) -->
+
+ <!-- If you supply one parameter it will be treated as milliseconds. -->
+
+ <!-- Date.parse() returns the number of milliseconds between the date and January 1,1970. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>This is our digital Clock.</h2>
+    <p id="digitalclock"></p>
+
+    <script>
+        function clockfun() {
+            const date = new Date();
+
+            let hours = date.getHours();
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            const seconds = date.getSeconds().toString().padStart(2, '0');
+
+            const period = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12;  // Converts 0 to 12 for 12 AM/PM
+            const formattedHours = hours.toString().padStart(2, '0');
+
+            document.getElementById("digitalclock").innerHTML = `${formattedHours}:${minutes}:${seconds} ${period}`;
+
+            // Call clockfun again after 1 second (1000 milliseconds)
+            setTimeout(clockfun, 1000);
+        }
+
+        // Initialize the clock immediately on page load
+        clockfun();
+    </script>
+
+    
+</body>
+</html>

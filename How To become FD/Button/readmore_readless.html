@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .readmoreless{
+            background-color: bisque;
+            padding: 14px;
+        }
+        .content{
+            display: inline;
+            display: none;
+        }
+        .btn{
+            cursor: pointer;
+            border: none;
+            padding: 14px 16px;
+            background-color: dodgerblue;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Read More and Read Less Button.</h1>
+
+
+    <div class="readmoreless">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque impedit eaque quo doloremque nihil quaerat nam? Accusamus illo ab, vel molestias sint at beatae officiis dolore quisquam dolores blanditiis velit! <span class="dot">.....</span> <span class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas sit corporis magnam reprehenderit, alias numquam pariatur dicta repellendus, quam laboriosam ad reiciendis eaque fuga ipsa itaque voluptatibus. Ea, ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore architecto dolorem placeat odit eos optio eveniet quos voluptas. Earum, reprehenderit numquam! Cumque minima nisi animi fugiat dignissimos quaerat facere libero!</span></p>
+
+        <button class="btn" onclick="myFun()" id="demo">Readmore</button>
+
+    </div>
+
+
+
+
+    <script>
+
+        function myFun(){
+            let content=document.querySelector(".content");
+            let btn=document.getElementById("demo");
+
+            let dot=document.querySelector(".dot");
+
+            if(content.style.display=="inline"|| content.style.display==""){
+                content.style.display="none";
+                btn.innerHTML="Readmore";
+                dot.style.display="inline";
+                
+               //console.log(btn.style);
+            }
+            else
+            {
+                content.style.display="inline";
+                btn.innerHTML="Readless";
+                dot.style.display="none";
+                //console.log(btn.style.innerHTML);
+
+
+            }
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

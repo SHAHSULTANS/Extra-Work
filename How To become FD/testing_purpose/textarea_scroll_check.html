@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textarea scroll check</title>
+    <style>
+        body{
+            padding-bottom: 1000px;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <textarea name="" id="textarea" rows="6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt officiis corrupti nihil animi quos quis veniam, nulla, dolorum beatae dolorem repellendus? Mollitia voluptates molestias sit sed nobis ratione maiores ab!
+        </textarea>
+
+
+
+    <script>
+        document.getElementById("textarea").addEventListener("scroll",function(){
+            console.log("YES");
+
+            console.log(document.documentElement.offsetHeight);
+
+            console.log(document.documentElement.clientHeight);
+
+            console.log(document.documentElement .scrollHeight); 
+        });
+    </script>
+    
+</body>
+
+</html>

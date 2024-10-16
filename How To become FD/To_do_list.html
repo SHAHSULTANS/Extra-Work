@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <style>
+        body {
+            margin: 0;
+            min-width: 250px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #f44366;
+            padding: 30px 40px;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .header ::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        input {
+            margin: 0;
+            border: none;
+            padding: 10px;
+            width: 75%;
+            font-size: 16px;
+            float: left;
+        }
+
+        .addBtn {
+            padding: 10px;
+            width: 25%;
+            background: #d9d9d9;
+            float: left;
+            overflow: hidden;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            color: #555;
+        }
+
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            background-color: #eee;
+            font-size: 18px;
+        }
+
+        ul li:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        ul li:hover {
+            background-color: #ddd;
+        }
+
+        ul li.checked {
+            background-color: #888;
+            color: white;
+            text-decoration: line-through;
+        }
+
+        ul li.checked::before {
+            position: absolute;
+            content: "";
+            border-color: white;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            top: 10px;
+            left: 16px;
+            height: 15px;
+            width: 7px;
+        }
+
+        .close{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myDIV" class="header">
+        <h2 style="margin: 5px;">My To do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span class="addBtn" onclick="add()">Add</span>
+    </div>
+
+
+
+    <ul id="myUL">
+        <li>Hit the gym</li>
+        <li class="checked">Pay bills</li>
+        <li>Met Geroge</li>
+        <li>Read the Book</li>
+    </ul>
+
+
+
+
+    <script>
+        var nodelist = document.getElementsByTagName("li");
+        // console.log(nodelist);
+        for (let i = 0; i < nodelist.length; i++) {
+            var span=document.createElement("span");
+            var txt=document.createTextNode("\u00D7");
+            span.className="close";
+
+            span.appendChild(txt);
+            nodelist[i].appendChild(span);
+
+            //console.log(nodelist[i]);
+            //break; 
+        }
+
+        var close=document.getElementsByClassName("close");
+        for(let i=0;i<close.length;i++){
+            close[i].onclick=function(){
+                
+                this.parentElement.style.display='none';
+            }
+        }
+
+
+
+        var list=document.querySelector("ul");
+        list.addEventListener("click",function(event){
+            //console.log(event.target.tagName);
+            if(event.target.tagName=="LI"){
+                //console.log(event.target)
+                event.target.classList.toggle("checked");
+            }
+        })
+
+
+        function add(){
+            var li=document.createElement("li");
+            var inputvalue=document.getElementById("myInput").value;
+           // console.log(inputvalue);
+
+           var t=document.createTextNode(inputvalue);
+            li.appendChild(t);
+
+            if(inputvalue===''){
+                alert("you must write something!!");
+            }
+            else{
+                document.getElementById("myUL").appendChild(li);
+            }
+        }
+        
+    </script>
+
+</body>
+
+</html>

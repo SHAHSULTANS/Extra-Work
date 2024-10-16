@@ -1,0 +1,39 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>groupBy method in <Object></Object></title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        let fruits = [{ name: "apple", quantity: 10 },
+        { name: "Banana", quantity: 150 },
+        { name: "orange", quantity: 50 }];
+
+
+        function mycallfun({ quantity }) {
+            return quantity>10?"ok":"low";
+
+        }
+
+        let result= Object.groupBy(fruits,mycallfun);
+        console.log(result.low.length);
+        //console.log(result.ok.entries());
+        for(let i=0;i<result.ok.length;i++){
+            console.log(result.ok[i].name);
+            
+        }
+    </script>
+
+</body>
+
+</html>

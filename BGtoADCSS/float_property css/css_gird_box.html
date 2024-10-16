@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .box{
+            float: left;
+            width: 33.3%;
+            padding: 50px;
+            height: 500px;
+        }
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: table;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="box" style="background-color: #bbb;">Some text inside the box</div>
+        <div class="box" style="background-color: #ccc;">Some text inside the box
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nisi quibusdam pariatur soluta, beatae voluptas. Adipisci, earum quae dicta dolore at molestias, soluta eum repellat quis omnis reprehenderit laudantium itaque!
+        </div>
+        <div class="box" style="background-color: #ddd;">Some text inside the box</div>
+
+    </div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, aliquid asperiores ratione deleniti quae dignissimos nesciunt. Odit, non provident. Deserunt tempore aliquid eaque amet assumenda eveniet veniam necessitatibus praesentium temporibus.</p>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+       
+        .tab button{
+            padding: 12px 16px;
+            font-size: 18px;
+            float: left;
+            border: none;
+            width: 25%;
+            cursor: pointer;
+            
+
+        }
+        .tab button:hover{
+            background-color: #ddd;
+        }
+
+        .tabcontent{
+            padding: 50px;
+            text-align: center;
+            color: white;
+            display: none;
+            
+        }
+
+
+
+        #Dhaka{background-color: hsl(0, 100%, 60%);}
+        #London{background-color: hsl(120, 100%, 55%);}
+        #New_Delhi{background-color: yellowgreen;}
+        #Tokyo{background-color: orange;}
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="tabcontent" id="Dhaka">
+        <h1>Dhaka</h1>
+        <p>Dhaka is the capital of BD.</p>
+    </div>
+    <div class="tabcontent" id="London">
+        <h1>London</h1>
+        <p>London is the capital of England</p>
+    </div>
+    <div class="tabcontent" id="New_Delhi">
+        <h1>New Delhi</h1>
+        <p>New Delhi is the cpital of India</p>
+    </div>
+    <div class="tabcontent" id="Tokyo">
+        <h1>Tokyo</h1>
+        <p>Tokyo is the capital of Japan</p>
+    </div>
+
+    <div class="tab">
+        <button  class="tablinks" id="default"  onmouseover="myFun('Dhaka',this,'hsl(0, 100%, 60%)')">Dhaka</button>
+        <button  class="tablinks" onmouseover="myFun('London',this,'hsl(120, 100%, 55%)')"> London</button>
+        <button  class="tablinks" onmouseover="myFun('New_Delhi',this,'yellowgreen')">New Delhi</button>
+        <button class="tablinks"  onmouseover="myFun('Tokyo',this,'orange')">Tokyo</button>
+    </div>
+
+
+
+
+
+    <script>
+        function myFun(cityName,element,color){
+
+            var tabcontent=document.getElementsByClassName("tabcontent");
+            for(var i=0;i<tabcontent.length;i++){
+                tabcontent[i].style.display="none";
+            }
+            //console.log(element.className);
+            
+
+            var tablinks=document.getElementsByClassName("tablinks");
+            for(var i=0;i<tablinks.length;i++){
+                tablinks[i].style.backgroundColor="";
+            }
+
+
+
+
+            document.getElementById(cityName).style.display="block";
+            console.log(element);
+            element.style.backgroundColor=color;
+            
+            
+            
+
+        }
+
+
+        document.getElementById("default").click();
+
+        //document.getElementById("Dhaka").style.display="block";
+    </script>
+
+</body>
+
+</html>

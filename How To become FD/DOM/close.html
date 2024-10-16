@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=a, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Open and Close method</h2>
+
+    <button onclick="myFun()">open</button>
+
+
+
+
+
+
+
+
+
+    <script>
+
+        //------------------------------------------------
+        //Here we open a doc with some text.
+        /*
+        function myFun(){
+
+            document.open()
+            document.write("<h1>Hello</h1>");
+            document.write("<p>Shanto</p>");
+    
+            document.close();
+        }
+
+        */
+
+
+
+        ///-------------------------------------------------------
+        //Here we open a new window using window.open()
+
+
+        function myFun() {
+            const myWindow = window.open();
+
+            myWindow.document.open();
+
+            myWindow.document.write("<h1>Hello</h1>");
+            myWindow.document.write("<p>Shanto</p>");
+            myWindow.document.close();
+        }
+    </script>
+
+</body>
+
+</html>

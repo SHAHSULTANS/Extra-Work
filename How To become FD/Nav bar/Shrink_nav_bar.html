@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .nav{
+            background-color: #444;
+            overflow: hidden;
+            padding: 90px 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: 0.4s;
+            z-index: 999;
+           
+            
+        }
+
+        .nav a{
+            text-decoration: none;
+            color: white;
+            padding: 14px 16px;
+           
+            text-align: center;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+           
+
+        }
+        .nav .nav-right a{
+            float:left;
+        }
+        #Logo{
+            font-size: 35px;
+            font-weight: bold;
+            
+            transition: 0.4s;
+        }
+        .nav-right{
+            float: right ;
+        }
+        .nav a:hover{
+            background-color: #333;
+        }
+        .nav a.active{
+            background-color: #04AA6A;
+        }
+
+        .content{
+            
+            padding-left: 10px;
+            padding-bottom: 1000px;
+
+        }
+
+        @media screen and (max-width:600px) {
+            .nav{
+                padding: 10px 5px !important;
+            }
+            .nav a{
+                padding: 4px !important;
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .nav-right{
+                float:none;
+            }
+           .nav .nav-right a{
+                float: none;
+               
+               
+            }
+            
+           
+            
+        }
+       
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="nav">
+        <a href="#" id="Logo">Company Name</a>
+        <div class="nav-right">
+            <a href="#" class="active">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>This example demonstrate how to shrink a navigatiom bar when user starts to scroll the page.</h2>
+        <p>Scroll down this frame to see the effect!</p>
+        <p>Scroll to the top remove the effect!</p>
+
+        <p><b>Note: </b>we have also made the navbar Responsive resize the browser window to see the effect!!</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, autem. Magnam delectus reprehenderit sunt exercitationem deserunt. Repudiandae magnam cum debitis assumenda animi, ipsum, laboriosam, illum recusandae dolorem eligendi aut atque. </p>
+    </div>
+
+
+    <!-- <p id="demo"></p> -->
+
+
+    <script>
+
+        
+//-------------------------------------------------------
+        //dynamically calcuter nav height 
+        //We set marginTop dynamically.
+        var x=document.querySelector(".nav");
+        //document.getElementById("demo").innerHTML=x.offsetHeight+" px";
+        var y=document.querySelector(".content");
+        var marginValue=x.offsetHeight+5;
+        y.style.marginTop=marginValue+"px";
+
+
+
+        window.onscroll=function(){
+            scrollFun()
+        };
+
+
+        function scrollFun(){
+            if(document.body.scrollTop>80 || document.documentElement.scrollTop>80){
+                document.querySelector(".nav").style.padding="30px 10px";
+                document.getElementById("Logo").style.fontSize = "25px";
+               
+                
+            }
+            else
+            {
+                document.querySelector(".nav").style.padding="90px 10px";
+                document.getElementById("Logo").style.fontSize = "35px";
+               
+                
+            }
+
+
+        }
+    </script>
+    
+</body>
+</html>

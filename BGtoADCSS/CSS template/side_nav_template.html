@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .sidenav{
+            background-color: hsla(0, 0%, 0%, 0.528);
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sidenav a{
+            text-decoration: none;
+            display: block;
+            padding: 14px 16px;
+            color: white;
+            font-size: 20px;
+        }
+        .content{
+            margin-left: 200px;
+            padding-left: 20px;
+        }
+        .sidenav a:hover{
+            background-color: hsla(0, 0%, 0%, 0.90);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+
+    </div>
+
+    <div class="content">
+        <h2>CSS template</h2>
+        <p>A full height, fixed sidenav and content</p>
+
+    </div>
+    
+</body>
+</html>

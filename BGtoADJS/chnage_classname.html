@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .oldclass{
+            color: aqua;
+        }
+        .newclass{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo" class="oldclass">Hello</div>
+    <button onclick="myFun()">change Class</button>
+
+    <script>
+        function myFun(){
+            var el=document.getElementById("demo");
+            el.classList.toggle("newclass");
+        }
+    </script>
+    
+</body>
+</html>

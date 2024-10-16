@@ -1,0 +1,48 @@
+<!--Only function have prototypes in JS.That means object doesn't have a prototype property. -->
+
+<!--Sometimes you need to add new properties or method to all existing objects of a given type -->
+<!--When you try to acces a property or method on an object, JS first check the object itself.if it's not found , it searches the object's prototype. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object prototype</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+
+    <script>
+        function Person(fname, lname, age) {
+            this.firstName = fname;
+            this.lastName = lname;
+            this.age = age;
+        }
+
+
+        const Me = new Person("shah", "sultan", 50);
+
+        //adding new properties.
+        Person.prototype.national = "BD";
+
+
+        //adding new function.
+
+        Person.prototype.fullname = function () {
+            return this.firstName + " " + this.lastName;
+        }
+
+
+        document.getElementById("demo").innerHTML = Me.national + " fullName: " + Me.fullname() + "<br>" + Object.keys(Me) + "<br>" + Object.keys(Me) + "<br><br>" + Object.entries(Me);
+
+        //Here fullname is a function so, we have to used ()
+
+
+    </script>
+</body>
+
+</html>

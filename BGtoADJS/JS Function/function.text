@@ -1,0 +1,8 @@
+//A block of code designed to perform paticular task.
+//define with function keyword.
+
+
+Objects
+//Objects are variables too. But objects can contain many values.
+//example
+        //const car={type:"Fita", model:"500", color:"white"};

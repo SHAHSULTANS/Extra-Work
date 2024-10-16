@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type writer in js</title>
+</head>
+<body>
+
+    <button onclick="myFun()">click me</button>
+    <p id="demo"></p>
+
+    <script>
+        var i=0;
+        var sec=50;
+
+        var text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore blanditiis itaque ullam temporibus, consectetur accusamus dolor sequi nostrum culpa, aliquam perspiciatis pariatur quos maiores? Sequi dolor distinctio ex adipisci accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore blanditiis itaque ullam temporibus, consectetur accusamus dolor sequi nostrum culpa, aliquam perspiciatis pariatur quos maiores? Sequi dolor distinctio ex adipisci accusamus.";
+
+
+        function myFun(){
+            if(i<text.length){
+                document.getElementById("demo").innerHTML+=text.charAt(i);
+                i++;
+                setTimeout(myFun,sec);
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

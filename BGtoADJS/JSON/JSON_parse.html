@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="demo"></p>
+
+
+
+
+
+    <script>
+
+//Parse used to convert JSON string---> to Object.
+    
+
+
+
+
+//-------------------------------------------------------
+                //Exception
+    
+
+    //------------------------------------------------------
+                //Date() format
+
+
+    /*
+    const text='{"name":"shanto","Today":"2024-07-06T06:06:18.439Z","city":"sherpur"}';
+    const obj=JSON.parse(text);
+    
+    //Converting date into string.
+    obj.Today= new Date(obj.Today);
+    document.getElementById("demo").innerHTML=obj.name+" "+obj.Today;
+
+    */
+
+
+
+    //----------------------------------------------
+                //Funciton()
+
+    const text='{"name":"shanto","age":"function(){return 30}","city":"sherpur"}';
+    const obj=JSON.parse(text);
+
+    //obj.age=new Function("return " +obj.age)();
+    obj.age=eval("("+obj.age+")");
+   
+    document.getElementById("demo").innerHTML=obj.name+" "+obj.age();
+
+
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=l, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        .row{
+            display: flex;
+            background-color: black;
+        }
+        .dropdown{
+            display:inline-block;
+        }
+        .content{
+            display:inline-block;
+            position: absolute;
+           top:55px;
+            background-color: #333;
+            left: 70px;
+            display: none;
+        }
+        .content a{
+            text-decoration: none;
+            display: block;
+            padding: 14px 16px;
+            color: white;
+        }
+        .row .dropdown:hover .content{
+            display: block;
+        }
+        .Btn{
+            background-color: #04AA6A;
+            border:none;
+            padding: 14px 16px;
+            font-size: 18px;
+            color:white;
+        }
+        
+
+    </style>
+
+
+</head>
+
+<body style="padding-bottom: 2002px;">
+
+    <div class="row">
+        <button class="Btn" style="border-right: none;">Button</button>
+        <div class="dropdown">
+            <button class="Btn" style="border-left: none;">&#9660;</button>
+            <div class="content">
+                <a href="#">link1</a>
+                <a href="#">link2</a>
+                <a href="#">link3</a>
+            </div>
+        </div>
+
+</body>
+
+</html>

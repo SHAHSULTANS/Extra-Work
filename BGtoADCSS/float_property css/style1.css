@@ -1,0 +1,17 @@
+.box{
+    border: 2px solid;
+    height: 100px;
+    width: 100px;
+    background-color: tomato;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    float:left;
+    margin-right: 10px;
+}
+
+/* p{
+    clear: left;
+} */

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 50px 0;
+            background-color: bisque;
+            text-align:center;
+            margin-top: 16px;
+        }
+        button{
+            padding:20px;
+            background-color: hsl(108, 92%, 49%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0px 3px 2px 3px forestgreen;
+        }
+        button:hover{
+            background-color: hsl(108, 92%, 39%);
+            color:aqua
+        }
+        button:active{
+            background-color: hsl(108, 92%, 59%);
+        }
+    </style>
+</head>
+<body>
+    <button onclick="myFun()">Click Me</button>
+    <div id="myDiv">
+        This my Div
+
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus placeat excepturi nostrum ipsum ea illum cum magni quibusdam quos cumque. Eaque cumque pariatur dolores quam vitae facilis voluptatibus, ad sit.</p>
+
+
+    <script>
+        function myFun(){
+            var myDiv=document.getElementById("myDiv");
+            if(myDiv.style.display=="none"){
+                myDiv.style.display="block";
+            }
+            else
+            {
+                myDiv.style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>

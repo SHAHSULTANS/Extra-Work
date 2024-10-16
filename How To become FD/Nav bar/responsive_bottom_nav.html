@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .nav{
+            background-color: #333;
+            overflow: hidden;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+        }
+        .nav a{
+            text-decoration: none;
+            color:white;
+            float: left;
+            display: block;
+            padding: 14px 16px;
+            font-size: 18px;
+        }
+        .nav a:hover{
+            background-color: #ddd;
+            color:black;
+        }
+        .nav a.active{
+            background-color:#04AA6A;
+        }
+        
+
+        .nav .icon{
+            
+            display: none;
+        }
+
+        @media screen and (max-width:600px) {
+            .nav a:not(:first-child){
+                display:none;
+            }
+            .nav a.icon{
+                display: block;
+            }
+            
+        }
+        @media screen and (max-width:600px) {
+            .nav.response a{
+                float: none;
+                display: block;
+            }
+               
+        }
+
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+    
+    <div class="nav">
+        <a href="#" class="active">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+
+        <a href="#" class="icon" style="float: right;" onclick="myFun()">&#9776;</a>
+
+
+    </div>
+    <div class="content" style="margin-left:6px;">
+        <h2>Responsive bottom NavBar Example</h2>
+        <p>Resize the browser window and see how it works!!</p>
+    </div>
+
+
+
+    <script>
+        function myFun(){
+
+            var x=document.querySelector(".nav");
+            /*
+            if(x.className=="nav"){
+                x.className+=" response";
+            }
+            else
+            {
+                x.className="nav";
+            }
+            */
+
+            x.className.toggle("response");
+            console.log(x.className);
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

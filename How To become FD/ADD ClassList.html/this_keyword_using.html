@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add className using this keyword.</title>
+</head>
+<body>
+    <div id="myDiv" onclick="myfun()">
+        Click Me!.
+    </div>
+
+
+    <div id="myDiv1" onclick="addClass(this)">
+        Click Me!2
+    </div>
+
+
+    <script>
+        function myfun(self){
+            console.log(this);
+        }
+
+        function addClass(elmnt){
+            console.log(elmnt);
+        }
+    </script>
+    
+</body>
+</html>

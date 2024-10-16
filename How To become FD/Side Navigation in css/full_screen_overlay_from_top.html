@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .nav {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            height: 0%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            transition: 0.7s;
+            transition-timing-function: ease-in-out;
+            
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            padding: 12px;
+            font-size: 25px;
+            text-align: center;
+            width: 100%;
+
+
+
+        }
+        .nav a:hover{
+            color: white;
+            background-color: hsla(0, 0%, 40%, 0.8);
+        }
+
+
+        span {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .closeBtn{
+            position: absolute;
+            top: 0px;
+            right: 40px;
+           
+              
+        }
+        .nav a.closeBtn:hover {
+            color: red;
+        }
+        
+       
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="nav">
+
+        <a href="#" style="text-align:right;" class="closeBtn" onclick="this.parentElement.style.height='0'">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="main">
+        <h1>Fullscreen Overlay Nav Example</h1>
+        <p>Click on the element below open the full screen navigation menu.Yeah That is good enough for us!!</p>
+
+        <span onclick="myFun()">&#9776; Open</span>
+
+    </div>
+
+
+
+
+    <script>
+        function myFun() {
+            //----------------------------------------
+            /*
+            var cnam = document.getElementsByClassName("nav");
+            console.log(cnam);
+            // Loop through the HTMLCollection and apply the style to each element
+            for (var i = 0; i < cnam.length; i++) {
+                cnam[i].style.width = "100%";
+            }
+
+            */
+
+
+
+            //----------------------------------------------
+            //let's try another
+            /*
+            var elem=document.querySelector(".nav");
+
+            elem.style.width="100%";
+            */
+
+
+            //--------------------------------------------
+            //Let's start with another one.
+
+            var elem=document.querySelectorAll(".nav");
+            elem.forEach(function(element){
+                element.style.height="100%";
+            })
+
+        }
+    </script>
+
+</body>
+
+</html>

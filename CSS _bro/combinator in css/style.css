@@ -1,0 +1,35 @@
+    /* #container{
+        border: 2px solid black;
+    } */
+    /*descendent*/
+    /* #container p{
+        background-color: hsla(68, 66%, 35%, 0.806);
+    } */
+
+    /* child */
+    /* #container>p{
+        background-color: hsla(68, 66%, 35%, 0.806);
+    } */
+
+    /* general sibling */
+    /* #container~p{
+        background-color: hsla(68, 66%, 35%, 0.806);
+
+    } */
+
+    /* adjacent sibling */
+/* 
+    #container+p{
+        background-color: hsla(68, 66%, 35%, 0.806);
+    } */
+
+
+
+
+
+
+
+
+
+
+  

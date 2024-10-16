@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .content{
+            display: none;
+        }
+        .accordion button{
+            width: 100%;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 18px;
+            border: none;
+            background-color: #bbb;
+            cursor: pointer;
+        }
+        .accordion button:nth-of-type(even){
+            background-color: #ccc;
+        }
+
+        .accordion button:hover{
+            background-color: #ddd;
+        }
+        .content{
+            padding: 8px;
+            border: 2px solid #eee;
+        }
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <div class="accordion">
+
+
+        <button class="action">Section 1</button>
+        
+
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit animi quibusdam odio placeat? Ipsa perferendis quibusdam nihil dolore, aliquam, nobis doloribus officia asperiores dignissimos error dolor omnis quo? Vitae, laudantium.</p>
+
+        </div>
+
+
+
+        <button class="action">Section 2</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat officia est consequuntur ipsam deserunt sed autem quisquam adipisci soluta. Doloribus quia delectus eum minima consequatur iste est sapiente dolorem sunt.</p>
+
+        </div>
+
+
+        <button class="action">Section 3</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam cumque provident ducimus suscipit vero eaque excepturi illum, iusto corporis! Soluta omnis velit explicabo delectus minus voluptatum corrupti ex eveniet.</p>
+
+        </div>
+
+
+
+        <button class="action">Section 4</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam cumque provident ducimus suscipit vero eaque excepturi illum, iusto corporis! Soluta omnis velit explicabo delectus minus voluptatum corrupti ex eveniet.</p>
+
+        </div>
+        
+
+
+
+    </div>
+
+
+
+
+    
+    <script>
+        var acc=document.getElementsByClassName("action");
+        for(var i=0;i<acc.length;i++){
+            acc[i].addEventListener("click",function(){
+                //this.classList.toggle("active");
+
+                var pannel=this.nextElementSibling;
+                if(pannel.style.display=="block"){
+                    pannel.style.display="none";
+                }
+                else
+                {
+                    pannel.style.display="block";
+                }
+            })
+        }
+
+
+    </script>
+    
+</body>
+</html>

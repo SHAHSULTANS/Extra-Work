@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<body>
+    <div>
+        <p id="demo">00:00:00</p>
+    </div>
+    
+    <button onclick="start()">Start</button>
+    <button onclick="pause()">Pause</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+        var totalmilsec=0;
+        var mili=0;
+       var id=undefined;
+
+       let demo=document.getElementById("demo");
+        function start(){
+            if(id==undefined){
+            let old=new Date().getTime();
+           // console.log(old);
+           id=setInterval(check,50);
+            function check(){
+                let newtime=new Date().getTime();
+
+                mili=newtime-old;
+                let total=totalmilsec+mili;
+                console.log(totalmilsec);
+
+                milisecond=(total%100).toString().padStart(2,'0');
+                //console.log(milisecond);
+                let second=Math.floor(total/1000).toString().padStart(2,'0');
+                let minite=Math.floor(total/(60*1000)).toString().padStart(2,'0');
+                demo.innerHTML=`${minite}:${second}:${milisecond}`;
+                
+              
+            }
+        }
+
+        }
+
+        function pause(){
+            clearInterval(id);
+            totalmilsec+=mili;
+            mili=0;
+            id=undefined;
+        }
+        function reset(){
+            totalmilsec=0;
+            mili=0;
+            clearInterval(id); 
+            demo.innerHTML="00:00:00";
+            id=undefined;
+        }
+
+        
+
+    </script>
+</body>
+</html>

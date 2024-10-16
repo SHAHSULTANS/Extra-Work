@@ -1,0 +1,51 @@
+
+<!--Prototype is Used for function or constructor.
+Other property is used for object. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object property</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+        const Person={
+            firstName:"Shah",
+            lastName:"sultan",
+            age:100,
+            language:"EN",
+            fullname:function(){
+                return this.firstName+" "+this.lastName;
+            }
+        }
+
+        //Object.defineProperty(Person,"language",{value:"EN"});
+        Object.defineProperty(Person,"language",{writable:true});
+        
+
+        //2. add dot notation
+       // Person.language="EN";
+
+
+        //3. bracket notation
+        //Person["language"]="EN";
+
+        //4. Object.assign method.
+        //Object.assign(Person,{"language":"EN"});
+        
+
+        console.log(Person);
+        document.getElementById("demo").innerHTML=Person.fullname();
+
+
+
+    </script>
+    
+</body>
+</html>

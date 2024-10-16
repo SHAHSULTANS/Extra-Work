@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing modal images</title>
+    <style>
+        .modalImgRow{
+            width: 100%;
+        
+        }
+        .modalImages{
+            width: 80%;
+            margin: auto;
+            display: flex;
+        }
+        .modalImages div{
+            width: 16.6%;
+            cursor: pointer;
+        }
+        .modal{
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0, 0, 0, 0.732);
+            position: fixed;
+            z-index: 10;
+            padding-top: 100px;
+            top: 0;
+            left: 0;
+            animation-name: ex;
+            animation-duration: 0.8s;
+            animation-timing-function: ease-in-out;
+            display: none;
+        }
+        @keyframes ex {
+            from{width: 0;}
+            to{width: 100%;}
+            
+        }
+        .modalImages div img{
+            width: 100%;
+            min-height: 50px;
+            opacity: 0.7;
+        }
+        .modalImages div img:hover{
+            opacity: 1;
+        }
+        .modalImgRow .modalShowed{
+            width: 80%;
+            margin: auto;
+            box-shadow: 2px 2px 3px 2px black ;
+            
+            
+        }
+        .modalShowed .modalcap{
+            background-color: black;
+            color:white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .modalImgRow .modalShowed img{
+            width: 100%;
+        }
+        .modal span{
+            position: absolute;
+            right: 5%;
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+            top: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="modalImgRow">
+        <div class="modalImages">
+            <div><img src="img_mountains_wide.jpg" alt="img_mountains_wide"></div>
+            <div><img src="img_lights_wide.jpg" alt="img_lights_wide"></div>
+            <div><img src="img_nature_wide.jpg" alt="img_nature_wide"></div>
+            <div><img src="img_snow_wide.jpg" alt="img_snow_wide"></div>
+            <div><img src="img_5terre_wide.jpg" alt="img_5terre_wide"></div>
+            <div><img src="img_woods_wide.jpg" alt="img_woods_wide"></div>
+        </div>
+         <div class="modal">
+            <span onclick="this.parentElement.style.display='none';">X</span>
+            <div class="modalShowed">
+                <img src="img_nature_wide.jpg" alt="">
+                <div class="modalcap">Hello</div>
+            </div>
+         </div>
+    </div>
+
+    <script>
+        window.onclick=function(event){
+             let imagesclass=event.target.parentElement.parentElement;
+             let showed=document.querySelector(".modal .modalShowed img");
+
+             let images=document.querySelectorAll(".modalImages div img");
+
+             let cap=document.querySelector(".modal .modalcap");
+             //console.log(cap.innerHTML);
+             //console.log(images[0]);
+             //console.log(event.target);
+             //console.log(showed);
+             //console.log(images);
+             if(imagesclass.className=="modalImages"){
+                //console.log("hell0");
+
+                for(let i=0;i< images.length;i++){
+                    if(images[i]==event.target){
+                        document.querySelector(".modal").style.display="block";
+                        //console.log(images[i].src);
+                        showed.src=images[i].src;
+                        cap.innerHTML=images[i].alt;
+                    }
+                }
+             }
+        }
+    </script>
+</body>
+</html>

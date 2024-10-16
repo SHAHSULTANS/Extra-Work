@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --blue:#1e90ff;
+            --white:#ffffff;
+        }
+        body{
+            background-color: var(--blue);
+        }
+        h2{
+            border-bottom: 2px solid var(--blue);
+        }
+
+        .container{
+            background-color: var(--white);
+            color:var(--blue) ;
+            padding:15px;
+        }
+
+        .container button  {
+            background-color: var(--white);
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 5px;
+          }
+    </style>
+
+
+</head>
+<body>
+    <h1>Get and Change CSS Variable With JavaScript</h1>
+
+    <div class="container">
+        <h2>Lorem IpSum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam alias numquam id saepe quis nobis modi eum, unde nam molestias sequi distinctio quidem facilis minima sed vitae? Minus, quaerat possimus?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, quo libero ad culpa minima nesciunt! Eaque laborum error quas nobis nulla. Tenetur obcaecati dolorum, temporibus magnam dolor aspernatur aperiam facere.</p>
+
+        <p>
+            <button>YES</button>
+            <button>NO</button>
+        </p>
+    </div>
+    <br>
+
+
+    <button type="button" onclick="myFunction_get()">Get CSS Variable with JS</button>
+    <button type="button" onclick="myFunction_set()">Change CSS Variable with JS</button>
+
+
+
+    <script>
+        var r=document.querySelector(':root');
+        
+        function myFunction_get(){
+            var rs=getComputedStyle(r);
+
+            alert("The value of --blue is : "+ rs.getPropertyValue('--blue'));
+        }
+        
+
+        function myFunction_set(){
+            r.style.setProperty('--blue','aqua');
+        }
+    </script>
+
+    
+</body>
+</html>

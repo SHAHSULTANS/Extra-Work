@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            display: inline-block;
+        }
+
+        .dropBtn{
+            background-color: #04AA6a;
+            border: none;
+            padding: 14px 16px;
+            color:white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .dropcontent{
+            background-color: #333;
+            width: 160px;
+            position: absolute;
+            display: none;
+          
+        }
+        .dropcontent a{
+            text-decoration: none;
+            display: block;
+            padding: 14px 16px;
+            color: white;
+        }
+        .dropcontent a:hover{
+            background-color: #444;
+        }
+        .drop{
+            display: block;
+        }
+        .dropBtn:hover{
+            background-color: #04BB6a;
+        }
+        .show{
+            display: block;
+        }
+        
+    </style>
+
+
+</head>
+<body>
+    <div class="nav">
+        <button class="dropBtn" onclick="myFun()">Dropdown</button>
+        <div class="dropcontent" id="mycontent">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+
+    <script>
+        function myFun(){
+            /*
+            var x=document.querySelector(".dropcontent");
+            if(x.style.display=="block"){
+                x.style.display="none";
+
+            }
+            else
+            {
+                x.style.display="block";
+            }
+            */
+
+
+
+
+
+
+            //-------------------------------------------
+
+            document.getElementById("mycontent").classList.toggle("show");
+
+            //close the dropdown if the user clicks outside of it
+
+
+        }
+
+
+        window.onclick=function(event){
+                
+            if(!event.target.matches('.dropBtn')){
+
+               
+                var dropdowns=document.getElementsByClassName('dropcontent');
+
+                for(var i=0;i<dropdowns.length;i++){
+                    var opendrop=dropdowns[i];
+                    if(opendrop.classList.contains('show')){
+                        opendrop.classList.remove("show");
+                    }
+                }
+
+
+
+
+                //Try different way;
+                /*
+                var dpdn=document.querySelector(".dropcontent");
+                if(dpdn.classList.contains('show')){
+                    dpdn.classList.remove('show');
+                }
+                */
+
+               
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>

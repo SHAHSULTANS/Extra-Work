@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic tooltip in css</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .tooltip{
+            position: relative;
+            display:inline;
+            border-bottom: 1px dotted black;
+            background-color: bisque;
+        }
+        .tooltip .tooltiptext{
+            visibility:hidden;
+            position:absolute;
+            background-color: black;
+            color:white;
+            padding: 5px 0;
+            border-radius: 5px;
+            width: 120px;
+            left: 50%;
+            bottom: 100%;
+            margin-left: -60px;            
+        }
+        .tooltip .tooltiptext::after{
+            content: " ";
+            position: absolute;
+            top: 100%;
+            color:aqua;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color:black  transparent  transparent transparent;
+        }
+
+
+        .tooltip:hover .tooltiptext{
+            visibility: visible;
+        }
+
+
+    </style>
+
+
+</head>
+<body style="text-align:center;">
+    <h2>Basic tooltip</h2>
+    <p>Move the mouse over me</p>
+
+    <div class="tooltip">
+        Hover me 
+        <span class="tooltiptext">Tooltip</span>
+    </div>
+    
+</body>
+</html>

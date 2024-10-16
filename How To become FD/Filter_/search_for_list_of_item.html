@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search item from search list</title>
+    <style>
+        .searchmenu{
+            position: relative;
+        }
+        #search{
+            padding: 12px 16px;
+            width: 100%;
+            font-size: 18px;
+            border: 2px solid #bbb;
+            padding-left: 50px;
+        
+        }
+        span{
+            position: absolute;
+            left:-5px;
+            bottom: -10px;
+            padding: 14px 16px;
+            font-size: 30px;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        ul li a{
+            display: block;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            padding: 12px 14px;
+            color: black;
+            text-align: left;
+        }
+        ul li:nth-child(even){
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+    <h2>My searchBox</h2>
+
+    <div class="searchmenu">
+        <input type="search" name="search" id="search" placeholder="search for name" onkeyup="myFun()">
+        <span>&#128269;</span>
+
+    </div>
+    <div class="row">
+        <ul class="list">
+            <li><a href="#">Shanto</a></li>
+            <li><a href="#">Khaled Mahmud</a></li>
+            <li><a href="#">Sultan</a></li>
+            <li><a href="#">Hasan Mahmud</a></li>
+            <li><a href="#">Shah</a></li>
+            <li><a href="#">Billy</a></li>
+            <li><a href="#">Calvin</a></li>
+            <li><a href="#">Boobs</a></li>
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function myFun(){
+            let input=document.getElementById("search").value;
+            input= input.toUpperCase();
+            //console.log(input);
+
+            let list=document.querySelectorAll(".list li");
+            //console.log(list);
+
+            for(let i=0;i<list.length;i++){
+                let name=list[i].firstElementChild;
+                name=name.innerHTML;
+                console.log(name);
+
+                if(name.toUpperCase().indexOf(input)>-1){
+                    list[i].style.display="";
+
+
+                }
+                else{
+                    list[i].style.display="none";
+                }
+            }
+        }
+    </script>
+
+
+    
+</body>
+</html>

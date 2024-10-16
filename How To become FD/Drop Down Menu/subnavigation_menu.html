@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .nav{
+            display: flex;
+            background-color: #333;
+        }
+        .nav a{
+            text-decoration: none;
+            padding: 14px 16px;
+            color: white;
+        }
+        .nav .dropBtn{
+            padding: 14px 16px;
+            background-color: inherit;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            
+        }
+        .dropcontent{
+            display: flex;
+            position: absolute;
+            text-align: center;
+            left: 0;
+            background-color: red;
+            width: 100%;
+            display: none;
+           
+        }
+        .dropBtn:hover{
+            background-color: red;
+        }
+        .dropdown:hover .dropcontent{
+           display:flex;
+        }
+        .nav a:hover{
+            background-color: red;
+        }
+        .dropcontent a:hover{
+            background-color: #aaa;
+            color:black
+        }
+        
+        
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="nav">
+
+        <a href="#">Home</a>
+        <div class="dropdown">
+            <button class="dropBtn">About &#9660;</button>
+            <div class="dropcontent">
+                <a href="#">Company</a>
+                <a href="#">Team</a>
+                <a href="#">Carrer</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropBtn">Services &#9660;</button>
+            <div class="dropcontent">
+                <a href="#">Bring</a>
+                <a href="#">Deliver</a>
+                <a href="#">Package</a>
+                <a href="#">Express</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <button class="dropBtn">Partners &#9660;</button>
+            <div class="dropcontent">
+                <a href="#">Link1</a>
+                <a href="#">Link2</a>
+                <a href="#">Link3</a>
+            </div>
+        </div>
+
+        <a href="#">Contact</a>
+    </div>
+    <h2 style="margin-top:35px;">Here is subnavigation bar</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem beatae molestiae magnam optio quas quam consectetur odio, maiores sapiente saepe. Enim magnam cumque porro similique necessitatibus earum quam cupiditate! Fugit!</p>
+    
+</body>
+</html>

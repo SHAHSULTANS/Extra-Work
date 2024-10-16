@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+//-----------------------------------------
+        /*JSON.stringify()
+        Purpose: Converts a JavaScript object or value to a JSON string. */
+
+
+        /*JSON.parse()
+        Purpose: Converts a JSON string into a JavaScript object. */
+
+
+        
+        
+        
+        //---------------------------(OBject)
+        
+        // const obj={name:"Shanto",age:20,city:"sherpur"};
+        
+        
+        
+        //---------------------------(Array)
+        //const array=["Shanto","Abdullah","Khaled"];
+
+
+
+
+
+//------------------------------------------------- 
+        //For storing data text always one of legal formats.
+        //* store and retrive data from local storage.
+
+
+
+        /*
+         const obj={name:"Shanto",age:20,city:"sherpur"};
+         
+         const myJson=JSON.stringify(obj);
+         localStorage.setItem("Testjson",myJson);
+
+         let retrive=localStorage.getItem("Testjson");
+         //console.log(retrive);//Here retrive is JSON
+        
+
+        //When we use parse means 
+          //Converts a JSON string into a JavaScript object
+        let text=JSON.parse(retrive);
+
+
+        */
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------
+//                  (Exception)
+//In JSON date object are not allowed. It convert date into string.
+        /*
+        const obj={name:"shanto",Today:new Date(),city:"sherpur"};
+
+        let text=JSON.stringify(obj);
+
+        document.getElementById("demo").innerHTML=text;
+
+        */
+
+        
+
+
+
+        //The JSON.stringify() function will remove any function from a JavaScript object, both the key and value.
+
+       const obj={name:"shanto",age:function(){return 30},city:"sherpur"};
+
+        //let text=JSON.stringify(obj); 
+        //Now function omited.
+        //document.getElementById("demo").innerHTML=text;
+
+
+
+        //-----------------------------------------------
+        //So convert function into string before running JSON.stringify() function.
+        
+        obj.age=obj.age.toString();
+        let text=JSON.stringify(obj);
+
+        document.getElementById("demo").innerHTML=text;
+        
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Food R Us</h1>
+    <div class="fruits">Apple</div>
+    <div class="fruits">Orange</div>
+    <div class="fruits">Banana</div>
+
+    <h4>Root vegetables</h4>
+    <ul>
+        <li>Beets</li>
+        
+        <li>Carrots</li>
+        <li>Potatoes</li>
+        
+    </ul>
+
+
+    <h4>Non Root vegetables</h4>
+    <ul>
+        <li>Broccoli</li>
+        <li>Celery</li>
+        <li>Onions</li>
+    </ul>
+
+    <script>
+
+        const fruits=document.getElementsByClassName("fruits");
+        /*console.log(fruits);
+        fruits[2].style.backgroundColor="yellow";
+        for(let fruit of fruits){
+            fruit.style.backgroundColor="yellow";
+        }*/
+
+        /*
+        html collection don't have foreach method.
+        fruits.forEach();//console error.
+         */
+
+        /*Array.from(fruits).forEach(fruit=>{
+            fruit.style.backgroundColor="yellow";
+        })*/
+
+
+
+
+        /*bytagename*/
+
+        const h4elements=document.getElementsByTagName("h4");
+        const liElements=document.getElementsByTagName("li");
+
+        for(let h4el of h4elements){
+            h4el.style.backgroundColor="yellow";
+        }
+        for(let li of liElements){
+            li.style.backgroundColor="lightgreen";
+        }
+
+
+
+    </script>
+
+    
+</body>
+</html>

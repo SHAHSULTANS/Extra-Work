@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove method()</title>
+</head>
+<body>
+
+    <h2>The Element object</h2>
+
+    <ul id="demo">
+        <li>coffe</li>
+        <li>tea</li>
+        <li>milk</li>
+    </ul>
+
+    <button onclick="myFun()">click</button>
+    
+    <script>
+
+        function myFun(){
+            let element=document.querySelectorAll("ul li");
+            element[0].remove();
+        }
+    </script>
+</body>
+</html>

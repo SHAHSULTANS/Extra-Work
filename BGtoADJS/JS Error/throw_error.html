@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Please input number between 5 to 10.</p>
+    <input type="text" name="" id="input" min="5" max="10">
+    <button onclick="myFun()">Test</button>
+
+
+    <p id="demo"></p>
+
+
+
+
+
+
+    <script>
+        function myFun() {
+
+            var x = document.getElementById("input").value;
+            var demo=document.getElementById("demo");
+
+            try{
+                if (x.trim() == "") throw "empty";
+
+                if (isNaN(x)) throw "not a number";
+    
+                x = Number(x);
+    
+                if (x < 5) throw "too low";
+    
+                if (x > 10) throw "too large";
+            }
+            catch(error){
+                demo.innerHTML+="Input is "+error+"<br>";
+            }
+           
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

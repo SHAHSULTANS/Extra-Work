@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>section counter</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+        .column{
+            width: 22%;
+           background-color:hsla(0, 0%, 20%, 0.684);
+           margin: 4px; 
+           text-align: center;
+           font-weight: bold;
+           color: white;
+        }
+        .column h3{
+            padding: 0;
+            margin: 0;
+        }
+        .column p{
+            margin: 10px;
+        }
+        @media screen and (max-width:600px) {
+            .column{
+                width: 100%;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="column">
+            <p><i class="fa-solid fa-user"></i></p>
+            <h3>11+</h3>
+            <p>User</p>
+        </div>
+        <div class="column">
+            <p><i class="fa-duotone fa-solid fa-check"></i></p>
+            <h3>100+</h3>
+            <p>Prjects</p>
+        </div>
+        <div class="column">
+            <p><i class="fa-solid fa-face-smile"></i></p>
+            <h3>40+</h3>
+            <p>Happy Client</p>
+        </div>
+        <div class="column">
+            <p><i class="fa-solid fa-user"></i></p>
+            <h3>11+</h3>
+            <p>Metting</p>
+        </div>
+    </div>
+    
+</body>
+</html>

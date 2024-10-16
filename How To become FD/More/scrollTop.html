@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrolltop</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row {
+            width: 100%;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .inside {
+            width: 150px;
+            height: 100px;
+            overflow-y: scroll;
+            
+            background-color: aqua;
+            box-sizing: border-box; /* Include padding within the specified height */
+        }
+        .inside p{
+            padding-bottom: 1000px;
+            width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="inside">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consequuntur atque veniam neque. Accusantium exercitationem accusamus libero aspernatur unde rerum blanditiis ut ducimus. Assumenda nostrum odit rem architecto iure ipsum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores harum, nesciunt ex omnis aperiam sunt, rerum, dolore deleniti atque maxime eos tenetur! Temporibus ex soluta repellat commodi repellendus consequatur facilis!</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".inside").addEventListener("scroll",function(){
+            //console.log("YES");
+            let value=document.querySelector(".inside").scrollTop;
+            console.log(value);
+        })
+    </script>
+    
+</body>
+</html>

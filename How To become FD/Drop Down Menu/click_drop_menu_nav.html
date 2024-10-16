@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+
+        }
+
+        .nav a {
+            text-decoration: none;
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            font-size: 17px;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+
+        }
+
+        button {
+            padding: 14px 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .nav .dropcontent {
+            width: 160px;
+            position: absolute;
+            background-color: #333;
+            display: none;
+
+        }
+
+        .nav .dropcontent a {
+            float: none;
+            display: block;
+        }
+
+        .nav a:hover,
+        button:hover {
+            background-color: red;
+        }
+
+        .dropcontent a:hover {
+            background-color: #222;
+        }
+
+        .dropdown .show{
+            display: block;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">News</a>
+
+        <div class="dropdown">
+            <button id="myBtn" onclick="myFun()">Dropdown</button>
+            <div class="dropcontent">
+                <a href="#">Link1</a>
+                <a href="#">link2</a>
+                <a href="#">link3</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function myFun() {
+
+
+
+            //--------------------------------------------
+            /*
+            let content=document.querySelector(".dropcontent");
+
+           
+            if(content.style.display=="block"){
+                content.style.display="none";
+            }
+            else{
+                content.style.display="block";
+            }
+
+            */
+
+
+
+
+            //-------------------------------------------------
+            /*
+            let content = document.querySelector(".dropcontent");
+            let style = window.getComputedStyle(content);
+            if (style.display == "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+            
+            */
+
+
+d          //----------------------------------------
+
+            let content = document.querySelector(".dropcontent");
+            //content.classList.toggle("show");
+
+            //-------------------------------------------
+
+            //work same as toggle
+            if(content.className=="dropcontent"){
+                content.classList.add("show");
+            }
+            else{
+                content.classList.remove("show");
+            }
+            
+            console.log(content.classList[0]);
+
+
+    
+            //console.log(content);
+
+
+
+        }
+
+
+
+
+//-------------------------------------------------
+// Click Outside of the button.
+//Which Close the dropdown menu. 
+
+        window.onclick=function(event){
+            
+            console.log(event.target);
+
+            if(!event.target.matches("#myBtn")){
+                let content=document.getElementsByClassName("dropcontent");
+
+                for(let i=0;i<content.length;i++){
+                    let opencontent=content[i];
+
+                    if(opencontent.classList.contains("show")){
+                        opencontent.classList.remove("show");
+                    }
+                }
+            }
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

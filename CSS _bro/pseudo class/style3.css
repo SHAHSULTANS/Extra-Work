@@ -1,0 +1,10 @@
+
+#gretting p{
+    background-color: hsl(183, 72%, 54%);
+    padding: 10px;
+    display: none;
+
+}
+#gretting:hover p{
+    display: block;
+}

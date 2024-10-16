@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            background-color: #333;
+            position: relative;
+        }
+
+        .dropBtn {
+            background-color: inherit;
+            border: none;
+            padding: 14px 16px;
+            color: blue;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav a {
+            text-decoration: none;
+            padding: 14px 16px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .dropcontent {
+            display: flex;
+            flex-direction: column;
+            display: none;
+
+            padding-left: 16px;
+
+        }
+
+        .header {
+            background-color: red;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            padding-left: 15px;
+        }
+
+        .category {
+            position: absolute;
+            width: 100%;
+            background-color: #aaa;
+            top: 110px;
+            left: 0;
+            display: flex;
+            padding-left: 15px;
+        }
+
+        .column {
+            flex: auto;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .column a {
+            color: black;
+            font-size: 18px;
+        }
+
+        .nav .dropdown:hover .dropcontent {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">News</a>
+        <div class="dropdown">
+            <button class="dropBtn">Dropdown &#9660;</button>
+            <div class="dropcontent">
+                <div class="header">
+                    <h2>Mega Menu</h2>
+                </div>
+                <div class="category">
+                    <div class="column">
+                        <h2>Category 1</h2>
+                        <a href="#">link</a>
+                        <a href="#">link</a>
+                        <a href="#">link</a>
+
+                    </div>
+                    <div class="column">
+                        <h2>Category 2</h2>
+                        <a href="#">link</a>
+                        <a href="#">link</a>
+                        <a href="#">link</a>
+
+
+                    </div>
+                    <div class="column">
+                        <h2>Category 3</h2>
+                        <a href="#">link</a>
+                        <a href="#">link</a>
+                        <a href="#">link</a>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="main" style="margin-left:15px;">
+        <h2>Mega dropdown Menu</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem soluta dolorum impedit iste rem vero
+            quisquam, expedita odit culpa reiciendis, sunt vel, labore consequatur repellendus voluptates provident
+            adipisci. Nulla, incidunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sit obcaecati
+            dignissimos quasi? Eligendi ea praesentium consectetur dignissimos, quo nesciunt necessitatibus numquam
+            veniam quasi assumenda quae harum minus aliquid sint.</p>
+    </div>
+
+</body>
+
+</html>

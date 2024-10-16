@@ -1,0 +1,23 @@
+
+/* body{
+    margin:0px;
+} */
+
+
+
+/*Round 2--------------------------------------->*/
+.box{
+    border: 5px solid;
+    font-size: 5em;
+    width: 250px;
+    height: 250px;
+    margin: auto ;  
+}
+#box1{
+    background-color: hsla(0, 93%, 47%, 0.591);
+    /* margin-bottom: 50px; */
+    /* margin:auto; */
+}
+#box2{
+    background-color: hsla(240, 100%, 50%, 0.547);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form create</title>
+</head>
+
+<body>
+    <h2>Registration Form</h2>
+    <form>
+        <div>
+            <label for="fullname">FullName: </label><input type="text" name="fullname" id="fullname" required>
+        </div><br />
+        <div>
+            <label for="email">Email: </label><input type="text" name="email" id="email" required>
+        </div><br />
+
+        <div>
+            <label for="password">password: </label><input type="password" name="password" id="password">
+        </div><br />
+
+        <div>
+            <label for="dob">Date of Birth: </label><input type="date" name="dob" id="dob">
+        </div><br />
+
+        <div>
+            <label for="photo">Choose your Photo: </label><input type="file" name="photo" id="photo">
+        </div><br />
+
+
+        <div>
+            <label for="gender">Gender: </label>
+            <input type="radio" name="gender" id="gender" value="male">Male
+            <input type="radio" name="gender" id="gender" value="female">Female
+
+        </div><br />
+
+
+
+        <div>
+            <label for="department">Department: </label>
+            <select name="department">
+                <option value="CSE">CSE</option>
+                <option value="EEE" selected>EEE</option>
+                <option value="MATH">MATH</option>
+
+
+            </select>
+        </div><br />
+
+
+        <div>
+            <label for="message">Message</label>
+            <textarea cols="50" rows="20"></textarea>
+
+        </div><br />
+
+
+        <div>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>

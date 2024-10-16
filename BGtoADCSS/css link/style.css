@@ -1,0 +1,12 @@
+
+a:link, a:visited{
+    background-color: hsl(0, 100%, 50%);
+    text-decoration: none;
+    padding: 14px 25px;
+    display:inline-block;
+
+}
+a:active,a:hover{
+    background-color: hsl(0, 90%, 70%);
+
+}

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            position: relative;
+        }
+        #animate{
+            background-color: red;
+            height:50px;
+            width: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Create an Animated Webpage</h1>
+    <button onclick="myMove()">Click me</button>
+
+    <div id="container">
+        <div id="animate">
+             
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function myMove(){
+            let id=null;
+            let pos=0;
+            clearInterval(id);
+            let elm=document.getElementById("animate");
+            id=setInterval(frame,1);
+            function frame(){
+                if(pos==350){
+                    clearInterval(id);
+                }
+                else
+                {
+                    pos++;
+                    elm.style.top=pos+"px";
+                    elm.style.left=pos+"px";
+                }
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

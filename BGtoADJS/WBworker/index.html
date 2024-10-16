@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>count Number: <output id="demo"></output></p>
+
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+
+
+
+    <script>
+        let w;
+        function start(){
+            if(typeof(w)=="undefined"){
+                //console.log("YES");
+                w=new Worker("workers.js");
+            }
+            w.onmessage=function(event){
+                document.getElementById("demo").innerHTML=event.data;
+            }
+        }
+
+        function stop(){
+            w.terminate();
+            w=undefined;
+        }
+    </script>
+
+
+    
+</body>
+</html>

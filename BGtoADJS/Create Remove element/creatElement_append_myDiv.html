@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create element</title>
+
+    <style>
+        #myDiv{
+
+            background-color: dodgerblue;
+            padding: 8px;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <h2>Create Element() method in DOM</h2>
+
+    <div id="myDiv">
+        <p>This  is paragraph tag</p>
+    </div>
+
+    <div >
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate distinctio in nihil explicabo adipisci tempore ullam labore voluptatum quibusdam error porro, autem nemo magni officiis asperiores dolorem nostrum quod maxime.</p>
+    </div>
+
+    <script>
+        const para=document.createElement("p");
+        para.innerHTML="This is another paragraph tag";
+
+        document.getElementById("myDiv").appendChild(para);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutout text</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .imgage-container{
+            background-image: url("img_nature_wide.jpg");
+            height: 300px;
+            position: relative;
+            background-size: cover;
+        }
+        .text{
+            background-color: white;
+            font-size: 10vw;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 10px;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            mix-blend-mode:screen;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>Responsive CutOut Text</h2>
+    
+    <div class="imgage-container">
+        <div class="text">NATURE</div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Div</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 16px;
+            margin-bottom: 2px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .myfilter {
+            height: 60px;
+            width: 60px;
+
+            background-color: dodgerblue;
+            margin: 1px;
+            padding: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .active{
+            background-color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Filter Div</h1>
+    <div class="btn">
+        <button class="myBtn" onclick="myFun('myfilter')">Show all</button>
+        <button class="myBtn" onclick="myFun('cars')">Cars</button>
+        <button class="myBtn" onclick="myFun('animals')">Animals</button>
+        <button class="myBtn" onclick="myFun('fruits')">Fruits</button>
+        <button class="myBtn" onclick="myFun('colors')">Colors</button>
+    </div>
+
+    <div class="container">
+        <div class="myfilter cars">BMW</div>
+        <div class="myfilter colors">Orange</div>
+        <div class="myfilter cars">Volvo</div>
+        <div class="myfilter colors">Red</div>
+        <div class="myfilter cars">Ford</div>
+        <div class="myfilter colors">Blue</div>
+        <div class="myfilter animals">Cat</div>
+        <div class="myfilter animals">Dog</div>
+        <div class="myfilter fruits">Melon</div>
+        <div class="myfilter fruits">Kiwi</div>
+        <div class="myfilter fruits">Banana</div>
+        <div class="myfilter animals">Cow</div>
+
+    </div>
+
+    <script>
+        function myFun(propery) {
+            //console.log(event.className)
+            let btn=document.getElementsByClassName("myBtn");
+            //console.log(btn);
+            for(let i=0;i<btn.length;i++){
+                btn[i].classList.remove("active");
+            }
+            event.target.classList.add('active');
+            //console.log(event.target.className);
+
+
+
+            //console.log(propery);
+            let filter = document.getElementsByClassName("myfilter");
+            //console.log(filter[0].style.display);
+
+            for (let i = 0; i < filter.length; i++) {
+                filter[i].style.display = "none";
+            }
+
+            let display = document.getElementsByClassName(propery);
+            //console.log(display);
+
+            for (let i = 0; i < display.length; i++) {
+                display[i].style.display = "flex";
+            }
+            
+            
+            //console.log(filter.classList);
+            
+        }
+    </script>
+
+</body>
+
+</html>

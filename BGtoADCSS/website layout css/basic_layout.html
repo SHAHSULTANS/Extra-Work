@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .header{
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+        }
+        .topnav{
+            background-color: #bbb;
+            overflow: hidden;
+            position:sticky;
+            top:0;   
+        }
+        .topnav a{
+            text-decoration: none;
+            background-color:hsl(0, 0%, 10%);
+            color: white;
+            padding: 14px 20px;
+            display: block;
+            float: left;
+            font-size: 18px;
+    
+        }
+        .topnav a:hover{
+            background-color:hsl(0, 0%, 30%);
+        }
+        .column{
+            float: left;
+            width: 33.3%;
+            padding: 5px;
+            
+        }
+        .row{
+            display: flex;
+        }
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        #col1{
+            height: 100vh;
+            overflow-y: auto;
+            background-color: lightblue;
+            
+        }
+        @media screen and (max-width:600px){
+            .column{
+                width: 100%;
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+        <p>Resize the browser window to see the responsive effect..</p>
+    </div>
+    <div class="topnav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="row">
+        <div class="column"id="col1">
+            <h2>Column</h2>
+            <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eum necessitatibus excepturi, nihil doloremque cum magni animi expedita suscipit commodi optio aliquam et reiciendis labore fugit alias error vitae perferendis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eveniet est, omnis ad consectetur exercitationem ipsa corporis distinctio libero non! A ea, saepe illum quis nemo beatae itaque voluptatum quaerat.
+            
+            </p>
+        </div>
+        <div class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eum necessitatibus excepturi, nihil doloremque cum magni animi expedita suscipit commodi optio aliquam et reiciendis labore fugit alias error vitae perferendis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eveniet est, omnis ad consectetur exercitationem ipsa corporis distinctio libero non! A ea, saepe illum quis nemo beatae itaque voluptatum quaerat.
+            </p>
+        </div>
+        <div class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eum necessitatibus excepturi, nihil doloremque cum magni animi expedita suscipit commodi optio aliquam et reiciendis labore fugit alias error vitae perferendis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eveniet est, omnis ad consectetur exercitationem ipsa corporis distinctio libero non! A ea, saepe illum quis nemo beatae itaque voluptatum quaerat.
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>

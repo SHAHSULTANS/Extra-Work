@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Messenger clone</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .msgrow{
+            height: 550px;
+            max-width: 320px;
+            margin:auto;
+            position: relative;
+            background-color: #222;
+            overflow:auto;
+            border-radius: 8px;
+        }
+        .msgrow::-webkit-scrollbar{
+            display: none;
+        }
+        .msgtop{
+            padding: 0 6px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position:sticky;
+            top: 0;
+            z-index:100;
+            background-color:rgba(0, 0, 0, 0.955);
+            
+        }
+        .msgtop button,p{
+            border: none; 
+            font-size: 17px;
+            padding: 8px;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        .msgnav {
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+            width: 0%;
+            height: 100%;
+            transition: 0.5s;
+            z-index: 999;
+            
+            position:sticky;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+
+        }
+        .msgnav a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            padding: 14px 16px;
+        }
+        .msgnav a:hover{
+            background-color: #444;
+        }
+        .msgsearch input{
+            width: 80%;
+            display: flex;
+            margin: auto;
+            font-size: 16px;
+            padding: 6px;
+            border-radius:8px;
+        }
+        .personnote{
+            position: relative;
+            width: 100%;
+            height: auto;
+            white-space:nowrap;
+            overflow-x:scroll;
+        }
+        .personnote::-webkit-scrollbar{
+            display: none;
+        }
+        .person{
+            
+            display: inline-block;
+            margin:3px;
+            margin-top: 8px;
+            width: 55px;
+            height: 58px;
+            color: white;
+           
+            font-size: 14px;
+        }
+        
+        .imgdiv{
+            margin: auto;
+            width: 40px;
+            height: auto;
+            
+        }
+        .imgdiv img{
+            width: 100%;
+            height: inherit;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .person .name{
+            margin-top: 1px;
+            text-align: center;
+            position: relative;
+        }
+        .list{
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+        }
+        .list .imgdiv{
+            
+            margin: 0;
+        }
+        .list span{
+            padding-left: 5px;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="msgrow">
+        <div class="msgtop">
+
+            <div>
+                <button class="msgmenu">&#9776;</button><span style="color: white;font-weight:bold;font-size:20px"> Chats</span>
+            </div>
+            <div>
+                <p style="background-color: #333;">🖊️</p>
+            </div>
+        </div>
+
+        <div class="collapsemenu msgnav">
+            <a href="#"><img src="379 shanto.jpeg" alt="profile" width="40px" height="40px" style="border-radius: 50%;">&nbsp; Shahriar Shanto</a>
+            <a href="#">Chats</a>
+            <a href="#">MarketPlace</a>
+            <a href="#">Message requests</a>
+            <a href="#">Archive</a>
+        </div>
+
+        <div class="msgsearch">
+            <input type="search" placeholder="search here.." id="chatsearch" onkeyup="search()">
+
+        </div>
+
+        <div class="personnote">
+            <div class="person">
+                <div class="imgdiv">
+                    <img src="379 shanto.jpeg" alt="">
+                </div>
+                <div class="name">
+                    <span>your note</span>
+                </div>
+            </div>
+
+            <div class="person">
+                <div class="imgdiv">
+                    <img src="1111.jpg" alt="">
+                </div>
+                <div class="name">
+                    <span>khaled</span>
+                </div>
+            </div>
+
+            <div class="person">
+                <div class="imgdiv">
+                    <img src="image.png" alt="">
+                </div>
+                <div class="name">
+                    <span>Shanto</span>
+                </div>
+            </div>
+            <div class="person">
+                <div class="imgdiv">
+                    <img src="379 shanto.jpeg" alt="">
+                </div>
+                <div class="name">
+                    <span>Abdullah</span>
+                </div>
+            </div>
+            <div class="person">
+                <div class="imgdiv">
+                    <img src="1111.jpg" alt="">
+                </div>
+                <div class="name">
+                    <span>Hasan</span>
+                </div>
+            </div>
+            <div class="person">
+                <div class="imgdiv">
+                    <img src="image.png" alt="">
+                </div>
+                <div class="name">
+                    <span>Maruf</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="chatlist" style="margin-top: 10px;">
+
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="image.png" alt="">
+                </div>
+                <span>Shahriar Shanto </span>
+                
+            </div>
+
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="1111.jpg" alt="">
+                </div>
+                <span>Khaled Mahmud Jon</span>
+            </div>
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="379 shanto.jpeg" alt="">
+                </div>
+                <span>Abdullah Nazmuz Sakib</span>
+                
+            </div>
+
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="image.png" alt="">
+                </div>
+                <span>Mahmudul Hasan</span>
+                
+            </div>
+
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="1111.jpg" alt="">
+                </div>
+                <span>Maruf Hossain</span>
+            </div>
+
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="379 shanto.jpeg" alt="">
+                </div>
+                <span>Azmain Fayek</span>
+                
+            </div>
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="image.png" alt="">
+                </div>
+                <span>Mahmudul Hasan</span>
+                
+            </div>
+
+            <div class="list">
+                <div class="imgdiv">
+                    <img src="1111.jpg" alt="">
+                </div>
+                <span>Ismail Hossain</span>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    
+
+
+    <script>
+        let menu=document.querySelector(".msgnav");
+        window.onclick=function(event){
+            //console.log(event);
+            if(event.target.className=="msgmenu"){
+                menu.style.width="60%";
+            }
+            else if(event.target.className=="collapsemenu msgnav"){
+                menu.style.width="60%";
+            }
+            else{
+                menu.style.width="0%";
+            }
+        };
+
+
+        function search(){
+            let inputvalue=document.querySelector("#chatsearch").value.toUpperCase();
+            //console.log(inputvalue);
+
+            let namelist=document.querySelectorAll(".list span");
+           //console.log(namelist.length);
+           for(let i=0;i< namelist.length;i++){
+                //console.log(namelist[i].innerHTML);
+                let Name=namelist[i].innerHTML.toUpperCase();
+                //console.log(namelist[0].parentElement);
+
+                if(Name.indexOf(inputvalue)>-1){
+                    namelist[i].parentElement.style.display="";
+                }
+                else{
+                    namelist[i].parentElement.style.display="none";
+                }
+                
+           }
+
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .row{
+            display: flex;
+        }
+
+        .left{
+            flex: 30%;
+            background-color: #bbb;
+            padding: 15px 0;
+        }
+        .right{
+            flex: 70%;
+            background-color: #eee;
+            padding: 0 14px;
+        }
+        .left h2{
+            padding-left: 8px;
+        }
+        #myMenu{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #mySearch{
+            width: 100%;
+            padding: 11px;
+            font-size:18px;
+            border: 1px solid #ddd;
+        }
+        #myMenu li a{
+            text-decoration: none;
+            color: black;
+            padding: 14px 16px;
+            display: block;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <h2>Search Menu</h2>
+    <div class="row">
+
+
+        <div class="left">
+             <h2>Menu</h2>
+             <input type="text" name="" id="mySearch" placeholder="search" title="Type in a category" onkeyup="myFun()">
+
+             <ul id="myMenu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">REACT</a></li>
+                <li><a href="#">Bootstrap</a></li>
+                <li><a href="#">Node.js</a></li>
+
+             </ul>
+        </div>
+
+
+        <div class="right">
+
+            <h2>Page Content</h2>
+            <p>Start type specific category inside the search bar to fileter the search option</p>
+            <p>some text... Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus mollitia esse pariatur totam doloribus perspiciatis quia deleniti unde. Porro itaque ea voluptate ipsum libero odio sint quas fugit doloribus suscipit?</p>
+            <p>Some text.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deserunt praesentium, ipsam adipisci tenetur asperiores quo hic dolorum voluptas! Quo eaque saepe pariatur ducimus natus accusamus reprehenderit aliquam error vitae!</p>
+
+            <h2>Yeah!! that is good enough for us</h2>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function myFun(){
+            var input=document.getElementById("mySearch");
+            
+            var filter=input.value.toUpperCase();
+            //console.log(input.value);
+            //console.log(filter);
+
+            var ul=document.getElementById("myMenu");
+
+
+
+            var li=ul.getElementsByTagName("li");
+            //var li=document.getElementsByTagName("li");
+            //var li=ul.children;
+
+             //all li return same
+
+
+
+
+            
+            //console.log(li)//return li collection.
+
+            //console.log(li[0].firstChild.innerHTML);
+
+
+            for(var i=0;i<li.length;i++){
+            
+
+                var a=li[i].firstChild.innerHTML;
+                //var a=li[i].getElementsByTagName("a")[0].innerHTML;
+                //var a=li[i].querySelector("a").innerHTML;
+                //var a=li[i].children[0].innerHTML;
+
+                //var a=li[i].firstElementChild.innerHTML;
+
+                //var a=li[i].querySelectorAll("a")[0].innerHTML;
+
+                //all anchor tag work same.
+
+
+
+
+
+                //console.log(a);
+
+                if(a.toUpperCase().indexOf(filter)>-1){
+                    li[i].style.display="";
+                }
+                else{
+                    li[i].style.display="none";
+                }
+
+
+            }
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

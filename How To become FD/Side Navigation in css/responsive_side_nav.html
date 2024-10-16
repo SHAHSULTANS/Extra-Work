@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family:sans-serif;
+        }
+        .nav{
+            background-color: #333;
+            float: left;
+            overflow: auto;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 200px;
+            
+            
+        }
+        .nav a{
+            color: white;
+            text-decoration: none;
+            padding: 14px 16px;
+            
+            display: block;
+            font-size: 20px;
+        }
+        .nav a.active{
+            background-color: #04AA6A;
+        }
+        .nav a:hover:not(.active){
+            background-color: #555;
+        }
+
+        div.content{
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+
+
+        @media screen and (max-width:700px) {
+            body{
+                margin: 0;
+            }
+            .nav{
+                width: 100%;
+                height: auto;
+                position:relative;  
+            }
+            .nav a{
+                float: left;
+            }
+            div.content{
+            
+                margin-left: 0;
+                padding-top: 45px;
+            }
+            
+        }
+
+        @media screen and (max-width:550px) {
+            .nav a{
+                float: none;
+                text-align: center;
+            }
+            
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <div class="nav">
+        <a href="#" class="active">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+    </div>
+
+
+
+    <div class="content">
+        <h2>Responsive Sidebar Example</h2>
+
+        <p>This example use media queries to transform the sidebar to top navigation bar when the screen the size is 700px or less</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, id. Dolorum praesentium nulla suscipit, est qui in provident! Omnis modi optio, perferendis eos quod labore quidem eligendi est recusandae impedit! </p>
+
+
+    </div>
+
+
+
+    
+</body>
+</html>

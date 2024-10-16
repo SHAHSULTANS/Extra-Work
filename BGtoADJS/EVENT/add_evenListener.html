@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn">Do Anything</button>
+    <p id="demo"></p>
+
+
+
+    <script>
+        var myBtn=document.getElementById("myBtn");
+        console.log(myBtn);
+        var democontent=document.getElementById("demo");
+        console.log(democontent);
+
+        
+        myBtn.addEventListener("click",function(){
+            democontent.innerHTML+="Click<br>";
+        });
+
+        myBtn.addEventListener("mouseover",function(){
+            democontent.innerHTML+="mouseover<br>";
+        });
+
+        myBtn.addEventListener("mouseout",function(){
+            democontent.innerHTML+="mouseout"+"<br>";
+        });
+        
+
+
+
+    </script>
+    
+</body>
+</html>

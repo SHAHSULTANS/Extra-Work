@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            animation-name: example;
+            animation-duration: 4s;
+            position: relative;
+            animation-iteration-count:3;
+            
+            animation-timing-function:ease-in-out;
+            animation-fill-mode: both;
+        }
+       /* @keyframes example {
+            from{background-color: red;}
+            to{background-color: yellow;}
+            
+        }
+        */
+        @keyframes example {
+            5%{background-color: violet;left: 0px;top: 0px;}
+            10%{background-color: blue;left: 200px;top: 0px;}
+            25%{background-color: aqua;left: 200px;top: 200px;}
+            50%{background-color: gold;left: 0px;top: 200px;}
+            100%{background-color: green;left: 200px;top: 0px;}
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    
+    
+</body>
+</html>

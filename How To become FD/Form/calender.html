@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+    <style>
+        header{
+            height: 100px;
+            width: 100%;
+            background-color: dodgerblue;
+            color: white;
+            font-size: 20px;
+            position: relative;
+        }
+        .month-year{
+            height: inherit;
+            width: inherit;
+            display: flex;
+            flex-direction: column;
+            
+            
+            align-items: center;
+            justify-content:center;
+        
+        }
+        .leftarrow,.rightarrow{
+            position: absolute;
+            transform: translateY(-50%);
+            
+        }
+        .leftarrow{
+            top: 50%;
+            left:2px;
+
+        }
+        .rightarrow{
+            right: 2px;
+            top: 50%;
+        }
+        .weekdays{
+            
+            display: flex;
+            background-color:#aaa;
+            padding: 2px;
+        }
+        .weekdays div{
+            width: calc(100% / 7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .days{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .days div{
+            
+            width:calc(100% / 7);
+            height: 35px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333333b3;
+            background-color: white;
+            position: relative;
+        
+
+        }
+        .days .active::before{
+            content:attr(content);
+            position: absolute;
+           
+            height: 30px;
+            width: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius:50%;
+            background:#04aa6a;
+           
+            
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="month-year">
+            <div>AUGUST</div>
+            <div>2024</div>
+        </div>
+        <div class="leftarrow">&#10094;</div>
+        <div class="rightarrow">&#10095;</div>
+    </header>
+    <div class="weekdays">
+        <div>Mo</div>
+        <div>Tu</div>
+        <div>We</div>
+        <div>Th</div>
+        <div>Fr</div>
+        <div>Sa</div>
+        <div>Su</div>
+    </div>
+    <div class="days">
+         
+    </div>
+
+    <script>
+        for(let i=1;i<=31;i++){
+            let div=document.createElement("DIV");
+          
+            div.innerText=i;
+            document.getElementsByClassName("days")[0].appendChild(div);
+        } 
+
+        let active=document.querySelectorAll(".days div");
+        active[27].classList.add("active");
+        let content=active[27].innerText;
+        document.querySelector(".active").setAttribute("content",content);
+        //console.log(content);
+
+       // console.log(active[9]);
+    </script>
+</body>
+</html>

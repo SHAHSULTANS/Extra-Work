@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Set</title>
+</head>
+<body>
+    <h1>Alarm Projects</h1>
+    <div class="alarm-container">
+        <input type="time" class="alarm-set" id="alarmSet">
+        <br><br>
+        <button id="setAlarmBtn">Set Alarm</button>
+        <p id="alarmMessage"></p>
+        <audio id="myAudio">
+            <source src="Coffe_house.MP3" type="audio/mpeg">
+        </audio>
+    </div> 
+    <span>&#9881;</span> <!-- Gear symbol -->
+    <span>&#x2699;</span> <!-- ⚙ Gear symbol -->
+
+
+
+
+    <script>
+        document.getElementById("setAlarmBtn").addEventListener("click", setAlarm);
+
+        let timeOutId=null;
+
+
+        function setAlarm(){
+            let alarmInput=document.getElementById("alarmSet").value;
+            if(alarmInput==""){
+                alert("Set Alarm Time ⏰");
+                return;
+            }
+
+            let currentTime=new Date();
+            let [hours,minites]=alarmInput.split(":");
+            currentTime.setHours(parseInt(hours));
+            currentTime.setMinutes(parseInt(minites));
+            currentTime.setSeconds(0);
+
+
+            let timeToAlart=currentTime.getTime()-new Date().getTime();
+
+            if(timeToAlart<0){
+                alert("You entered time is already Past🕧");
+                return;
+            }
+
+
+            document.getElementById("alarmMessage").innerText=`Your alarm time is ${currentTime.toLocaleString()}`;
+           
+            timeOutId=setTimeout(triggerAlarm,timeToAlart);
+            console.log(timeToAlart);
+            //console.log(hours);
+            //console.log(alarmInput);
+
+        }
+
+        function triggerAlarm(){
+            let Ringtone=document.getElementById("myAudio");
+            Ringtone.play();
+            alert("Time is up!!");
+            clearAlarm();
+
+        }
+        function clearAlarm(){
+            clearTimeout(timeOutId);
+            document.getElementById("alarmMessage").innerHTML="";
+        }
+
+    </script>
+
+    
+</body>
+</html>

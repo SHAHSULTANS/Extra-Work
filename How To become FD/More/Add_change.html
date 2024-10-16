@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add & change in HTML</title>
+    <style>
+        ul li{
+            text-decoration: line-through;
+            padding-left: 8px;
+        }
+        li:nth-child(even){
+            background-color: aqua;
+        }
+        li::before{
+            
+            content: "";
+            width: 8px;
+            display: inline-block;
+            height: 15px;
+            margin-right: 10px;
+            border: 2px solid black;
+            border-width:0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+    </ul>
+
+    <button onclick="myFun()">Remove</button>
+
+
+    
+    <script>
+        let li=document.createElement("li");
+        li.innerHTML="Kiwi"; 
+
+        //console.log(li);
+        document.querySelector("ul").appendChild(li);
+
+        function myFun(){
+            let last=document.querySelector("ul");
+            //last=last.querySelectorAll("li");
+            //console.log(la st.firstElementChild.innerHTML);
+
+            let list=last.lastElementChild;
+            last.removeChild(list);
+            //console.log(list);
+            //console.log(last[0].lastChild)
+        }
+
+
+        //console.log(li.innerHTML);
+    </script>
+</body>
+</html>

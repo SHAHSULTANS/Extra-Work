@@ -1,0 +1,56 @@
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+} 
+
+header{
+    background-color: hsla(0, 6%, 79%, 0.959);
+    text-align:center;
+    padding: 24px;
+
+}
+
+.navbar{
+    background-color: hsla(0, 0%, 18%, 0.959);
+    height: 50px;
+    
+}
+aside{
+    width: 20%;
+    float: left;
+    padding: 10px;
+}
+section{
+    width: 40%;
+    float: left;
+    padding: 10px;
+
+}
+article{
+    width: 40%;
+    float: left;
+    padding: 10px;
+
+}
+
+footer{
+    display: block;
+    clear: both;
+    background-color: hsla(0, 6%, 79%, 0.959);
+    text-align:center;
+    padding: 24px;
+
+}
+
+@media screen and (max-width:600px) {
+    aside,section,article{
+        width: 100%;
+    }
+    
+}
+

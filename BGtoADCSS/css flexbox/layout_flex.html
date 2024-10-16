@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .header,.footer{
+            background-color: #ccc;
+            text-align: center;
+            padding: 30px;
+            text-align: center;
+        }
+        h1{
+            font-size: 50px;
+        }
+        .navbar{
+            display: flex;
+            background-color: black;
+        }
+        .navbar a{
+            text-decoration: none;
+            background-color: aqua;
+            padding: 20px;
+            text-align: center;
+        }
+        .navbar a:hover{
+            background-color: hsl(180, 100%, 40%);
+            color: white;
+            border-radius: 5px;
+
+        }
+
+        .row{
+            display: flex;
+        }
+        .side{
+            height: 100vh;
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding-right: 20px;
+            padding-bottom: 200px;
+            
+        }
+        .main{
+            flex: 70%;
+            background-color: bisque;
+            padding-left: 20px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+
+        .fakeimg{
+            background-color: #ddd;
+            width: 100%;
+            padding: 20px;
+        }
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+        @media screen and (max-width:700px) {
+            .row,.navbar{
+                flex-direction: column;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <h1>My Website</h1>
+        <p>Resize the browser window see the effect</p>
+    </div>
+
+    <div class="navbar">
+        <a href="#">LinK</a>
+        <a href="#">LinK</a>
+        <a href="#">LinK</a>
+        <a href="#">LinK</a>
+    </div>
+
+    <div class="row">
+        <div class="side" style="overflow-y:auto;">
+            <h2>About Me</h2>
+            <h5>Photo about me</h5>
+            <div class="fakeimg" style="height: 200px;">image
+            </div>
+            <p>some text about me. learn about W3 school</p>
+            <div class="fakeimg" style="height:60px">image</div><br>
+            <div class="fakeimg" style="height:60px">image</div><br>
+            <div class="fakeimg" style="height:60px">image</div>
+
+        </div>
+
+        <div class="main">
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Dec 7, 2017</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <br>
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Sep 2, 2017</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+          </div>
+
+    </div>
+
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+</body>
+</html>

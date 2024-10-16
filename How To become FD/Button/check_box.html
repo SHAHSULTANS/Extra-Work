@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <style>
+        input[type="checkbox"]{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            border: 2px solid #555;
+            border-radius: 3px;
+        }
+        input[type="checkbox"]:checked{
+            background-color: dodgerblue;
+            border: 2px solid dodgerblue;
+        }
+        input[type="checkbox"]:checked::after{
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            top: 2px;
+            left: 6px;
+        
+            border:solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 88px;
+        }
+        label{
+            position:absolute;
+            margin-top: 3px;
+        }
+    </style>
+
+<h1>Show Checkboxes</h1>
+
+<form>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

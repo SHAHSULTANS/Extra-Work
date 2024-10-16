@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy text area's text</title>
+</head>
+<body>
+
+    <h1>Copy Textarea's Text</h1>
+
+    <!-- <textarea name="text" id="text" placeholder="some text..." rows="10" cols="25"></textarea> -->
+
+    <p id="demo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam fuga incidunt molestiae labore eum magnam nemo, sunt tempore consectetur culpa ipsam, voluptate pariatur. Alias consequatur placeat omnis animi, itaque illo?</p>
+
+    <button onclick="myFun()">copy</button>
+
+
+
+    <script>
+        function myFun(){
+            var copytext=document.querySelector("#demo").innerHTML;
+            //copytext.select();
+            //console.log(copytext.innerHTML);
+
+            const para=document.createElement("textarea");
+            para.value=copytext;
+
+            document.body.append(para);
+            
+            
+            
+            copytext=navigator.clipboard.writeText(para.value);
+            document.body.removeChild(para);
+
+        }
+    </script>
+    
+</body>
+</html>

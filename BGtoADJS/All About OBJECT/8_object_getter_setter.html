@@ -1,0 +1,45 @@
+
+<!--get: it does not take any argument and return value-->
+
+<!--set: It takes a single argument, which is the value being assigned to the property.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter & setter in JS</title>
+</head>
+<body>
+
+    <script>
+        const Obj={counter:0};
+        
+        Object.defineProperty(Obj,"reset",{
+            get:function(){this.counter=0;}
+        });
+
+        Object.defineProperty(Obj,"increment",{
+            get:function() { this.counter++;}
+        });
+
+        Object.defineProperty(Obj,"decrement",{
+            get:function() { this.counter--;}
+        });
+
+        Object.defineProperty(Obj,"add",{
+            set:function(i) { this.counter+=i;}
+        });
+
+
+        Obj.reset;
+        Obj.decrement;
+        Obj.increment;
+        Obj.add=5;
+
+       console.log(Obj.counter);
+    </script>
+    
+</body>
+</html>

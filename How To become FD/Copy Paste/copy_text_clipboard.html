@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy text to Clipboard</title>
+</head>
+<body>
+   
+
+    <button onclick="myFun()">Copy text</button>
+
+    <p id="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat omnis reiciendis tenetur quam porro aliquid deserunt enim, corporis modi possimus laborum commodi officiis. Voluptas nesciunt odit ex hic accusamus aspernatur?</p>
+
+    <script>
+        function myFun(){
+            var cpytext=document.getElementById("demo").textContent;
+            console.log(cpytext);
+           //console.log(cpytext.select()); 
+
+           cpytext.select();
+           navigator.clipboard.writeText(cpytext);
+        
+        }
+    </script>
+    
+</body>
+</html>
+<!-- Hello world  devices  devices  devices  devices
+Shanto is my name
+
+Hello world
+
+
+
+
+
+-->

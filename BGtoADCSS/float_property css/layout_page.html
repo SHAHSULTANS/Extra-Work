@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .header,.footer{
+            background-color: grey;
+            color: white;
+            padding: 15px;
+            text-align:center;
+        }
+        .header{
+            position: sticky;
+            top: 0;
+        }
+        .columnMenu{
+            width: 25%;
+            float: left;
+            padding: 15px;
+            height: 100vh;
+           
+        }
+        .columnContent{
+        
+            width: 100%;
+            padding-bottom: 500px;
+            height: 100vh;
+          
+        }
+        .columnMenu ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .columnMenu li{
+            padding: 8px;
+            background-color: aqua;
+            margin-bottom: 8px;
+        }
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .columnMenu li:hover{
+            background-color: hsl(180, 100%, 40%);
+        }
+        @media only screen and (max-width: 600px) {
+            .columnContent{
+               
+              background-color: lightblue;
+            }
+            .columnMenu{
+                
+            }
+          }
+   
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+    <div class="clearfix">
+        <div class="columnMenu" style="overflow-y: auto;">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li> <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+        <div class="columnContent">
+            <h1>The city</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis similique possimus excepturi quae totam sed nostrum suscipit! Rem dolorem accusantium reprehenderit sint molestias, ad animi alias quidem autem, voluptatum reiciendis!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio modi ipsum, quas sint ipsa, tenetur itaque accusamus est illo, obcaecati enim dolore ex provident error minima in incidunt repellat a!</p>
+        </div>
+    </div>
+    <div class="footer">
+        <h1>Footer</h1>
+    </div>
+    
+</body>
+</html>

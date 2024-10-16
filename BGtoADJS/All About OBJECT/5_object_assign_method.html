@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function Person(fname, lname, age = 50) {
+            this.firstName = fname;
+            this.lastName = lname;
+            this.age = age;
+        }
+
+        const Me = new Person("shah", "sultan");
+        console.log(Me);
+
+        const ex=new Person("Shah","Shanto",100);
+        
+        //copies ex object to a Me Object.
+        Object.assign(Me,ex);
+        
+        let text=Object.entries(Me);
+        document.getElementById("demo").innerHTML=text;
+    </script>
+</body>
+
+</html>

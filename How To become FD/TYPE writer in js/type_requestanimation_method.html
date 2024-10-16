@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type writer in js</title>
+</head>
+<body>
+
+    <button onclick="myFun()">click me</button>
+    <p id="demo"></p>
+
+    <script>
+        var i=0;
+
+        var text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore blanditiis itaque ullam temporibus, consectetur accusamus dolor sequi nostrum culpa, aliquam perspiciatis pariatur quos maiores? Sequi dolor distinctio ex adipisci accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore blanditiis itaque ullam temporibus, consectetur accusamus dolor sequi nostrum culpa, aliquam perspiciatis pariatur quos maiores? Sequi dolor distinctio ex adipisci accusamus.";
+
+        function Writer(){
+
+           if(i<text.length){
+                document.getElementById("demo").innerHTML+=text.charAt(i);
+                i++;
+                requestAnimationFrame(Writer);
+
+                //we can also use setInterval method().
+                
+           }
+        }
+
+        function myFun(){
+            i=0;
+            document.getElementById("demo").innerHTML="";
+            Writer();
+        }
+
+
+    </script>
+    
+</body>
+</html>

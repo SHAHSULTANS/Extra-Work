@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        /* Some solutions to display JavaScript objects are:
+
+        Displaying the Object Properties by name
+        Displaying the Object Properties in a Loop
+        Displaying the Object using Object.values()
+        Displaying the Object using JSON.stringify()*/
+
+
+
+
+        const person={
+            name:"shanto",
+            age:30,
+            city:"Dhaka"
+        }
+        /*
+        let text="";
+        for( let x in person){//of is not use.ob not it.
+            text+=person[x]+" ";
+        }
+        console.log(text);
+        */
+
+        //using Object.values()
+        console.log(Object.values(person));
+
+
+        //using JSON.stringify()
+
+        console.log(JSON.stringify(person));
+
+    </script>
+    
+</body>
+</html>

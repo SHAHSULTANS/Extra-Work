@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate PDF with Signature</title>
+</head>
+<body>
+    <h1>Generate Certificate with Signature</h1>
+    <button onclick="generateCertificate()">Generate PDF</button>
+
+    <!-- Display the generated PDF -->
+    <iframe id="pdfPreview" style="width:100%; height:500px;"></iframe>
+
+    <script>
+        function generateCertificate() {
+            const { jsPDF } = window.jspdf;
+
+            // Create a new PDF document
+            const doc = new jsPDF({
+                orientation: 'landscape',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            // Add some text
+            doc.text('Certificate of Completion', 105, 40, null, null, 'center');
+            doc.text('Shah Sultan', 105, 90, null, null, 'center');
+
+            // Add an image of the signature (assuming 'signature.png' is a valid image path)
+            const img = new Image();
+            img.src = 'omg - Copy.png'; // Replace with the path to your signature image
+            img.onload = function () {
+                doc.addImage(img, 'PNG', 180, 150, 40, 20); // Signature at (x=180, y=150)
+
+                // Generate and display the PDF
+                const pdfData = doc.output('datauristring');
+                document.getElementById("pdfPreview").src = pdfData;
+            };
+        }
+    </script>
+
+    <!-- Load jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

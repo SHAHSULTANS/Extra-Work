@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection any content</title>
+</head>
+<body>
+    <h2>Selection Any Content Using JS</h2>
+
+    <div class="content">
+        <h2>This is our content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta saepe quidem dignissimos amet enim autem ratione id nesciunt recusandae impedit debitis provident harum qui, voluptatum laudantium voluptatem delectus iusto temporibus?</p>
+    </div>
+    <button onclick="myFun()">click me</button>
+
+
+
+    <script>
+
+        function myFun(){
+            let content=document.querySelector(".content");
+
+            let range=document.createRange();
+            range.selectNodeContents(content);
+            let selection=window.getSelection();
+            selection.removeAllRanges();
+            
+            selection.addRange(range);
+            setTimeout(removeSelction,5000);
+        }
+
+
+        function removeSelction(){
+            let selection=window.getSelection();
+            selection.removeAllRanges();
+        }
+
+       
+
+
+        
+    </script>
+    
+</body>
+</html>

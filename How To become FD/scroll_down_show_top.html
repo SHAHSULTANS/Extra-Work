@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding:0;
+            padding-bottom: 2000px;
+        }
+    
+        h1{
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            margin: 0;
+        }
+        .Btn{
+            position: fixed;
+            right: 0;
+            bottom: 20px;
+           
+           
+           
+            
+            
+        }
+        .Btn button{
+            background-color: #04AA6A;
+            border: none;
+            padding: 14px 16px;
+            color: white;
+            font-size: 18px;
+            border-radius: 4px;
+            display: none;
+            cursor: pointer;
+
+            
+            
+           
+            
+        }
+     
+    </style>
+</head>
+<body>
+        <h1>Scroll Down</h1>
+
+    <p>This example demonstrate how to creat ea scroll to top button that becomes visible when the user start scroll Down</p>
+
+
+    <div class="Btn">
+        <button onclick="goTop()">Top</button>
+    </div>
+
+
+    <script>
+        window.onscroll=function(){
+            myFun();
+        }
+
+        let Bt=document.querySelector(".Btn button");
+        function myFun(){
+    
+            if(document.body.scrollTop>20||document.documentElement.scrollTop>20){
+                console.log(Bt.style.display); 
+                Bt.style.display="block";
+                
+            }
+            else{
+                Bt.style.display="none";
+    
+            }
+
+        }
+
+
+        function goTop(){
+            document.body.scrollTop=0;
+            document.documentElement.scrollTop=0;
+        }
+    </script>
+    
+</body>
+</html>

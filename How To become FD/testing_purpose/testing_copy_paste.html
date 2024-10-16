@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy paste</title>
+</head>
+<body>
+    <input type="text" name="text" id="text">
+    <button onclick="myfun()">copy</button>
+    
+
+    <script>
+        function myfun(){
+            let input=document.querySelector("#text");
+            console.log(input);
+            input.select();
+
+            navigator.clipboard.writeText(input.value);
+        }
+    </script>
+</body>
+</html>

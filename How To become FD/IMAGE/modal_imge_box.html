@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> modal imge box</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #myImg{
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.4s;
+
+        }
+        #myImg:hover{
+            opacity: 0.7;
+        }
+
+        .modal{
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 100px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.857);
+            display: none;
+        }
+
+
+        .modal-content{
+            margin: auto;
+            display: block;
+            width: 100%;
+            max-width: 700px;
+           
+        }
+
+        #caption{
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        .close{
+            color: white;
+            position: absolute;
+            right: 35px;
+            top: 30px;
+            font-weight: bold;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .close:hover,.close:focus{
+            color: #bbb;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>Image Modal</h2>
+    <p>In this example, we use CSS to create a modal(dialog box) that is hidden by default.</p>
+
+    <div class="gallery">
+        <img src="img_snow_wide.jpg" alt="Snow" id="myImg" style="width: 100%;max-width:300px" class="galleryimg">
+        <img src="img_nature_wide.jpg" alt="nature" id="myImg" style="width: 100%;max-width:300px" class="galleryimg">
+
+
+    </div>
+    
+    <div class="modal" id="myModal">
+        <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+        <img  id="img01" class="modal-content">
+        <div id="caption">Hello</div>
+    </div>
+
+
+
+
+    <script>
+        var modal=document.getElementById("myModal");
+
+
+        //var img=document.getElementById("myImg");//only use for single img
+        var img=document.querySelectorAll(".galleryimg");
+
+
+        var modalImg=document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+
+        //console.log(img);
+        for(let i=0;i<img.length;i++){
+        img[i].onclick=function(){
+            modal.style.display="block";
+            modalImg.src=this.src;
+            captionText.innerHTML=this.alt;
+            
+        }
+    }
+    </script>
+</body>
+</html>

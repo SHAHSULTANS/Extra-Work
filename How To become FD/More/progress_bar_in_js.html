@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress bar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #bbb;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .bar {
+            width: 1%;
+            padding: 14px 16px;
+            background-color: dodgerblue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Progress Bar in JS</h2>
+    <div class="container">
+        <div class="bar">
+
+        </div>
+    </div>
+
+    <button onclick="myFun()">click me</button>
+
+
+    <script>
+        var check = 0;
+        function myFun() {
+            if (check == 0) {
+                check=1;
+                var w = 1;
+                const id = setInterval(increase, 10);
+
+                function increase() {
+                    if (w == 100) {
+                        check=0;
+                        clearInterval(id);
+                    }
+                    else {
+                        w++;
+                        var bar = document.querySelector(".bar");
+
+                        //console.log(bar);
+
+                        bar.style.width = w + "%";
+
+                        //console.log(w);
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post" enctype="multipart/form-data">
+        <label for="username">username: </label>
+        <input type="text" placeholder="Shanto" id="username" required minlength="6" maxlength="12"><br><br>
+        
+        <label for="password">password: </label>
+        <input type="password" minlength="6" maxlength="12" required id="password"><br>
+
+
+        <label for="email">email: </label>
+        <input type="email" name="mail" id="email"><br>
+
+        <label for="phone">phone #: </label>
+        <input type="tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+
+        <label for="bday">birthdate: </label>
+        <input type="date" id="bday"><br>
+
+        <label for="quantity">quantity: </label>
+        <input type="number" value="1" min="0" max="100" id="quantity"><br>
+
+        <label for="title">title: </label>
+
+        <label for="Mr.">Mr.</label>
+        <input type="radio" id="Mr." value="Mr." name="same">
+
+        <label for="Mrs.">Mrs.</label>
+        <input type="radio" id="Mrs." value="Mrs." name="same">
+
+        <label for="phd.">phd.</label>
+        <input type="radio" id="phd." value="phd." name="same"><br>
+
+
+        <label for="payment">payment: </label>
+        <select id="payment">
+            <option value="visa">Visa</option>
+            <option value="paypal" selected>Paypal</option>
+            <option value="mastercard">mastercard</option>
+        </select><br>
+        
+
+        <label for="subscribe">subscribe:</label>
+        <input type="checkbox" id="subscribe"><br>
+
+        <label for="comment">comment: </label>
+        <textarea id="comment" rows="5" cols="25"></textarea><br>
+
+
+        <label for="file">file: </label>
+        <input type="file" id="file" accept="image/png, image/jpeg"><br><br>
+        <input type="reset">
+        <input type="submit">
+
+
+
+
+    </form>
+</body>
+</html>

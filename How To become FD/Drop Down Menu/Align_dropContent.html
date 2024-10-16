@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dropdown {
+            display: inline-block;
+
+        }
+
+        .dropBtn {
+            background-color: #04AA6A;
+            border: none;
+            padding: 14px 16px;
+            font-size: 17px;
+            color: white;
+            position:relativea;
+
+
+
+        }
+
+        .dropBtn:hover {
+            background-color: #03ce80;
+            cursor: pointer;
+
+        }
+
+        .dropContent {
+
+            background-color: rgba(0, 0, 0, 0.712);
+            box-shadow: 1px 2px 3px 2px black;
+            width: 160px;
+            display: none;
+            position: absolute;
+            right: 0;
+
+        }
+
+        .dropdown:hover .dropContent {
+            display: block;
+        }
+
+
+        .dropContent a {
+            text-decoration: none;
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            font-size: 17px;
+
+        }
+
+        .dropContent a:hover {
+            background-color: #333;
+        }
+
+        .right {
+            float: right;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <h2>Hoverable Drop Down Menu</h2>
+    <div class="dropdown">
+        <button class="dropBtn">DropDown</button>
+        <div class="dropContent" style="left: 5px;">
+            <a href="#">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">News</a>
+        </div>
+    </div>
+
+    <div class="dropdown right">
+        <button class="dropBtn">DropDown</button>
+        <div class="dropContent">
+            <a href="#">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">News</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

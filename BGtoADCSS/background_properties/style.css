@@ -1,0 +1,26 @@
+
+#firstPara{
+    background-color: hsl(0, 100%, 50%);
+    height: 100px;
+    width: 400px;
+
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+
+    display:flex;
+    align-items: center;
+    justify-content: center; 
+}
+#thirdPara{
+    background-image:url("omg.jpg");
+    height: 100 px;
+    width: 400px;
+    background-repeat:no-repeat;
+    background-position: center; 
+    background-size:contain;
+    opacity: 0.8;
+    /* background-attachment: fixed;  */
+}

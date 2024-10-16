@@ -1,0 +1,109 @@
+<!-- Default parameter:
+            function myFun(x,y=10){
+                return x+5} -->
+
+
+<!-- Rest parameter(...) treat argument as array
+    syn: function myFun(...args){
+                let sum=0;
+                for(let arg of args){
+                sum=sum+arg;
+                }} -->
+
+
+<!-- Javascript function buitin argument object.The argument object contains an array. 
+ JavaScript arguments are passed by value: The function only gets to know the values, not the argument's locations.-->
+
+
+
+<!-- const myObject = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
+}
+myObject.fullName(); -->
+
+
+
+
+<!-- A constructor invocation creates a new object. The new object inherits the properties and methods from its constructor. -->
+
+
+
+
+
+
+<!-- With call(), an object can use a method belonging to another object 
+ const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+const person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
+
+// This will return "John Doe":
+person.fullName.call(person1); -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+        var p = document.getElementById("demo");
+
+        /*
+        let sum=0;
+        function myFun(...args){
+            for(let arg of args){
+                sum=sum+arg;
+            }
+        }
+        myFun(4,5,6,4);
+        p.innerHTML=sum;
+
+        */
+
+
+        //built in argument objects.
+        function myFun() {
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        p.innerHTML = myFun(1, 2, 3, 5, 4);
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo">Go to google</p>
+    <button onclick="myFun()">Try it</button>
+    <button onclick="undo()">Close window</button>
+
+    <script>
+        let mywindow;
+        function myFun(){
+            mywindow=window.open('https://www.w3schools.com', 'exampleWindow',"width=200, height=100");//here window name is used when we open a new windowif example window already exist it loads the same window again.
+
+            //window.open("https://www.w3schools.com");
+        }
+        function undo(){
+            mywindow.close("https://www.w3schools.com");
+        }
+
+    </script>
+    
+</body>
+</html>

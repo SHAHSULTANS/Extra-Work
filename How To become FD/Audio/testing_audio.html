@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing Audio attribute.</title>
+</head>
+<body>
+    <audio src="Coffe_house.MP3" controls id="audio" autoplay ></audio>
+    <button onclick="check()">pause</button>
+
+    <script>
+        let au=document.getElementById("audio");
+       // console.log(audio.src);
+       //audio.currentTime=30;
+       //audio.volume=0.5;
+       //console.log(audio.duration());
+       //console.log(audio.muted);  
+       //audio.playbackRate=2.5;
+       au.play();
+       
+
+       let currentTime=new Date();
+
+       console.log(currentTime.toLocaleString());
+        function check(){
+            audio.pause();
+            
+        }
+    </script>
+    
+</body>
+</html>

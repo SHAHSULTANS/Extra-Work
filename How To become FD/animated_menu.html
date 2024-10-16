@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: inline-block;
+            cursor: pointer;
+        }
+        .bar1,.bar2,.bar3{
+            height: 5px;
+            background-color: black;
+            width: 35px;
+            margin-bottom: 6px;
+            transition-duration: 1.4s;
+        }
+        .change .bar1{
+            transform: rotate(-45deg);
+            translate: 0 11px;
+            z-index: 3;
+        }
+        .change .bar2{
+            opacity: 0;
+            z-index: 2;
+        }
+        .change .bar3{
+            transform: rotate(45deg);
+            translate: 0 -11px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, alias deleniti incidunt id harum totam optio accusamus repudiandae sequi. Velit iusto maxime dolor at et molestias, eligendi ad earum voluptatibus!</p>
+
+
+    <div class="container" onclick="myFun(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+
+    <script>
+        function myFun(x){
+            x.classList.toggle("change");
+        }
+    </script>
+    
+</body>
+</html>

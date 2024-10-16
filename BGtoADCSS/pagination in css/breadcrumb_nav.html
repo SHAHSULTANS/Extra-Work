@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.breadcrumb{
+            list-style: none;
+            padding: 8px 16px;
+            background-color: #eee;
+        }
+        ul.breadcrumb li{
+            display: inline;
+            color:seagreen;
+        }
+
+        ul.breadcrumb li+li:before{
+            content:"/\00a0";
+            padding: 8px;
+            color: sandybrown;
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <ul class="breadcrumb">
+        <li>Home</li>
+        <li>Pictures</li>
+        <li>Summer 15</li>
+        <li>Italy</li>
+    </ul>
+    
+</body>
+</html>

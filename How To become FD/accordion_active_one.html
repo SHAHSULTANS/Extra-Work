@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        button{
+            width: 100%;
+            padding: 20px;
+            border: none;
+            background-color: hsl(34, 57%, 70%);
+            text-align: left;
+            font-size: 20px;
+            color:rgb(60, 60, 127);
+        }
+        button:hover{
+            background-color: hsl(34, 57%, 60%);
+            color: hsl(0, 0%, 10%);
+
+        }
+
+        p{
+            background-color: bisque;
+            padding: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="myFun('btn1')">Section 1</button>
+    <p id="btn1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati animi sapiente tempore expedita. Eligendi ipsa quasi, at illum dolores cumque placeat aliquid mollitia laudantium soluta repellendus possimus iste quos ab?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, natus dolore itaque consequatur in aliquam! Dolorum distinctio quam voluptate, velit rerum laboriosam minima voluptates ipsam dolores nulla doloribus ratione ab?
+    </p>
+
+    <button onclick="myFun('btn2')">Section 2</button>
+    <p id="btn2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur debitis omnis illum libero ab mollitia adipisci accusantium fuga velit cum, ullam alias et! Voluptatum quaerat ratione, fugit veniam quam ea.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, delectus illo distinctio doloribus aperiam debitis corrupti veritatis veniam officia! Commodi nesciunt debitis labore aliquid quia, adipisci beatae quo quod architecto?
+    </p>
+    <button onclick="myFun('btn3')">Section 3</button>
+    <p id="btn3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A dignissimos fugit illum, eaque aspernatur, dolorem, corrupti perspiciatis atque veniam culpa nam modi vitae similique. Sed commodi repudiandae quaerat vero reprehenderit?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nulla dignissimos deserunt quo repellendus quis sit, itaque tempore modi nihil cupiditate obcaecati doloribus omnis temporibus nesciunt voluptates nobis esse id?
+    </p>
+
+
+
+
+    <script>
+
+        function myFun(id){
+
+            var pargraphps=document.querySelectorAll("p");
+            pargraphps.forEach(function(par){
+                if(par.id!=id){
+                    par.style.display='none';
+                }
+            })
+
+
+            var el=document.getElementById(id);
+            
+            if(el.style.display==="block"){
+                el.style.display="none";
+            }
+            else
+            {
+                el.style.display="block";
+            }
+            
+
+        }
+    </script>
+
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Position Example</title>
+<style>
+  /* Common styles */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  .element {
+    width: 50px;
+    height: 50px;
+    background-color: #ffcc00;
+    border: 1px solid #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  /* Positioning examples */
+  .static {
+    position: static;
+  }
+
+  .relative {
+    position: relative;
+    top: 20px;
+    left: 30px;
+  }
+
+  .absolute {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  .fixed {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 50px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="element static">Static</div>
+</div>
+
+<div class="container">
+  <div class="element relative">Relative</div>
+</div>
+
+<div class="container" style="position: relative;">
+  <div class="element absolute">Absolute</div>
+</div>
+
+<div class="container">
+  <div class="element fixed">Fixed</div>
+</div>
+
+<div class="container" style="height: 400px; overflow-y: scroll;">
+  <div class="element sticky">Sticky (Scroll down)</div>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus, nisl eu blandit tempus, odio nunc condimentum orci, nec consequat libero lectus non enim. Duis efficitur ultrices purus, nec luctus lectus consectetur id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras a libero eget lacus euismod egestas ac id risus. Aliquam auctor consequat est, at vehicula ipsum malesuada ac. Nullam sollicitudin augue sit amet purus rutrum tristique. Etiam auctor, nisi nec commodo sollicitudin, sapien nulla suscipit velit, id faucibus felis est a eros. Integer nec volutpat elit.</p>
+</div>
+
+</body>
+</html>

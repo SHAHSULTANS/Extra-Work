@@ -1,0 +1,193 @@
+
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyanmic Calender</title>
+    <style>
+        body{
+            background-color: #333;
+            height: 98vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            
+        }
+        .calender-container{
+            width: 300px;
+            background-color: white;
+        }
+        .calender-header{
+            display: flex;
+            background-color: #007bff;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            color: white;
+    
+
+        }
+        .calender-header #month-year{
+            font-size: 25px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .calender-body{
+            padding: 10px;
+        }
+        .calender-days{
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .calender-dates{
+
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            text-align: center;
+        }
+        
+        .calender-dates div:hover{
+            background-color: #ccc;
+            border-radius: 50%;
+        }
+        .calender-dates .not-current-month{
+            opacity: 0.6;
+        }
+        .today{
+            background-color: dodgerblue;
+            border-radius:50%; 
+            color: white;
+        }
+        
+    </style> 
+</head>
+<body>
+    <div class="calender-container">
+        <div class="calender-header">
+            <button id="prev-month">&lt;</button>
+            <div id="month-year">AUG 2024</div>
+            <button id="next-month">&gt;</button>
+        </div>
+        <div class="calender-body">
+            <div class="calender-days">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="calender-dates" id="calender-dates">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const calenderDates=document.getElementById("calender-dates");
+        const monthYear=document.getElementById("month-year");
+
+        const prevMonth=document.getElementById("prev-month");
+        const nextMonth=document.getElementById("next-month");
+
+
+        let currentDate=new Date();
+        //console.log(currentDate);
+
+
+        function renderCalender(){
+            calenderDates.innerHTML="";
+
+
+            const month=currentDate.getMonth();
+            const year=currentDate.getFullYear();
+
+            const firstDayOfMonth=new Date(year,month,1).getDay(); 
+
+            const lastDateOfMonth=new Date(year,month+1,0).getDate();
+
+            const lastDayOfMonth=new Date(year,month,0).getDate();
+
+            const today=new Date();
+            
+            let MY=`${currentDate.toLocaleString('default',{month:'long'})} ${year}`;
+            monthYear.textContent=MY;
+
+
+            for(let i=1;i<=firstDayOfMonth;i++){
+
+                const day=document.createElement("DIV");
+                day.textContent=lastDayOfMonth-firstDayOfMonth+i;
+                day.classList.add("not-current-month");
+                calenderDates.appendChild(day);
+
+            }
+            for(let i=1;i<=lastDateOfMonth;i++){
+                
+                const day=document.createElement("DIV");
+                day.textContent=i;
+                if(i==today.getDate() && month==today.getMonth() && year==today.getFullYear()){
+                    day.classList.add("today");
+                }
+                
+                calenderDates.appendChild(day);
+            }
+
+            let totalCells=firstDayOfMonth+lastDateOfMonth;
+
+            const nextMonthDays=totalCells<=35 ? 35-totalCells:42-totalCells; 
+            ///console.log(nextMonthDays);
+            for(let i=1;i<=nextMonthDays;i++){
+                const day=document.createElement("DIV");
+                day.textContent=i;
+                day.classList.add("not-current-month");
+                calenderDates.appendChild(day);
+            }
+
+
+
+
+            //console.log(MY);
+            //console.log(firstDayOfMonth);
+            //console.log(lastDateOfMonth);
+            //console.log(lastDayOfMonth);
+            //console.log(month+" "+year+" "+currentDate.getDay());
+            
+
+        }
+
+
+        prevMonth.addEventListener("click",()=>{
+
+            currentDate.setMonth(currentDate.getMonth()-1);
+            renderCalender(); 
+
+        });
+
+        nextMonth.addEventListener("click",()=>{
+            
+            currentDate.setMonth(currentDate.getMonth()+1);
+            renderCalender();
+
+        });
+
+
+        renderCalender();
+    </script>
+    
+</body>
+</html>

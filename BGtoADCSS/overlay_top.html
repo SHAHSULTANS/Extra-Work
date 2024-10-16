@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: relative;
+            width: 50%;
+        }
+        .image{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            background-color: bisque;
+            transition: 0.5s ease;
+        }
+        .container:hover .overlay{
+            
+            width: 100%;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <img src="img_avatar.png" alt="" class="image">
+        <div class="overlay">
+            <div class="text">
+                Hello world.
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

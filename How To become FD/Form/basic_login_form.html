@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Template</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        label,input,button[type=submit]{
+            display:inline-block;
+            margin: 5px;
+            font-size: 18px;
+            
+        }
+        .imgcontainer{
+            max-width: 300px;
+            height: 300px;
+            margin: auto;
+            padding-bottom: 30px;
+        }
+        
+        img{
+            width: 100%;
+            border-radius: 50%;
+            height:100%;
+        }
+        .container input[type=text],button[type=submit]{
+            
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 18px;
+            
+        }
+        
+        .container .psw{
+            float: right;
+            
+        }
+        .container .cancel{
+            padding: 12px 14px;
+            background-color: red;
+            border: none;
+            color: white;
+            font-size: 14px;
+        }
+       
+        button[type=submit]{
+            background-color: dodgerblue;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+           
+        }
+        label{
+            font-weight: bold;
+        }
+        button{
+            cursor: pointer;
+        }
+       
+
+    
+    </style>
+</head>
+<body>
+    <h1>Login Form</h1>
+
+    <form action="">
+
+        <div class="imgcontainer">
+            <img src="avatar.jpeg" alt="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname">Username</label>
+            <input type="text" name="uname" id="uname" placeholder="Enter username">
+
+
+            <label for="psw">Password</label>
+            <input type="text" name="psw" id="psw" placeholder="Enter password">
+
+            <button type="submit" >Login</button>
+
+           <label for="">
+            <input type="checkbox" checked="checked" name="remember">Remember me
+           </label>
+
+
+
+        </div>
+
+
+        <div class="container" style="background-color: bisque; padding:8px">
+            <button type="button" class="cancel">Cancel</button>
+
+            <span class="psw">Forgot <a href="#">Password</a></span>
+        </div>
+        
+    </form>
+    
+</body>
+</html>

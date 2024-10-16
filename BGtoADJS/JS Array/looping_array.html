@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h2>Looping An Array</h2>
+    <p id="demo"></p>
+
+
+
+    <script>
+        const fruits=["Banana","Orange","Apple"];
+
+
+        //Adding array elements.
+        fruits.push("Lemon");
+        
+
+        //remove array element(By default Last)
+        fruits.pop();
+        let text="<ul>";
+        /*
+        for(let i=0;i<fruits.length;i++){
+            text+="<li>"+fruits[i]+"</li>";
+        }
+        */
+
+        //we can iterate array by using forEach() method.
+
+
+
+
+        fruits.forEach(function(fruit){
+            text+="<li>"+fruit+"</li>";
+        })
+        text+="</ul>";
+
+        //document.getElementById("demo").innerHTML=typeof(fruits);
+
+        //Recognize an Array
+        //typeof return objects
+        //To solve using: Array.isArray(name);
+
+
+
+//-------------------------------------------------------
+        //Nested Array and Objects
+
+        const myObj={
+            name:"shanto",
+            age:24,
+            cars:[
+                {name:"Ford",model:["Fiesta","Focus","Mustang"]},
+                {name:"BMW",model:["320","X2","X5"]},
+                {name:"Fiat",model:["500","panda"]}
+            ]
+        }
+
+        
+        let full="";
+        for(let i in myObj.cars){
+            let x="";
+            x+="<h2>"+myObj.cars[i].name+"</h2>";
+            x+="<ul>";
+            for(let j in myObj.cars[i].model){
+                x+="<li>"+myObj.cars[i].model[j]+"</li>";
+            }
+            x+="</ul>";
+            full+=x;
+
+        }
+        document.getElementById("demo").innerHTML=full;
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="copy" placeholder="write something..."><br>
+    <a href="execcommand.html" onclick="myFun()">Hello</a>
+  
+
+    <script>
+
+        function myFun(){
+            console.log("Hell0");
+        }
+
+        /*
+        function copyText() {
+            const inputvalue=document.querySelector("#copy");
+            inputvalue.select();
+            inputvalue.setSelectionRange(0,99999);
+
+            try{
+                if(document.execCommand('copy')){
+                    alert("Text is copied")
+                }
+                else{
+                    alert("Failed to copy");
+                }
+            }
+            catch(err){
+                console.log("Failed "+err);
+
+            }
+
+            window.getSelection().removeAllRanges();
+        }
+            */
+    </script>
+</body>
+</html>

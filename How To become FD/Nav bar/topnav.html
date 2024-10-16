@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .topnav {
+            background-color: hsla(0, 0%, 0%, 0.841);
+            padding: 4px 6px;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            text-decoration: none;
+            float: left;
+            color: white;
+            padding: 14px;
+            font-size: 18px;
+            text-align: center;
+
+        }
+
+        .topnav a:hover{
+            background-color: #aaa;
+            color: black;
+        }
+        .topnav a.active{
+            background-color: #04AA6D;
+        }
+        /*When we hover the active links then hover effect is not affected.Because active class has higher priority than hover pseudo-class in our css*/
+
+        /*Now if we want hover on active class then */
+        .topnav a.active:hover{
+            background-color: #aaa;
+        }
+        /*Now hover effects works on active class*/
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="hello.html" class="active">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+    </div>
+    <h2>Some text....</h2>
+
+</body>
+
+</html>

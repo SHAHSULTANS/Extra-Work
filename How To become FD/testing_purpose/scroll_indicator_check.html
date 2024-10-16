@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll_indicator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            margin-top: 100px;
+            padding: 0;
+            padding-bottom: 2000px;
+        }
+       
+
+        #header {
+            background-color: red;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .scrollout {
+            position: relative;
+            width: 100%;
+            height: 18px;
+            background-color: black;
+        }
+
+        .scrollin {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0%;
+            height: 2px;
+            background-color: aqua;
+        }
+
+        #demo{
+            position: fixed;
+            top:50%;
+            left: 50%;
+        }
+        #demo1{
+            position: fixed;
+            top:40%;
+            left: 50%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="scrollout">
+            <div class="scrollin">
+
+            </div>
+        </div>
+    </div>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+
+
+
+    <script>
+        let clih=window.innerHeight;
+        let cliw=window.innerWidth; 
+
+        let h=document.documentElement.clientHeight;
+        let w=document.documentElement.clientWidth;
+
+        var sch;
+        window.onscroll=function(){ 
+           // console.log("ySS"); 
+            sch=document.documentElement.scrollTop;
+
+            
+            document.getElementById("demo1").innerHTML=sch; 
+            let height=document.documentElement.offsetHeight-document.documentElement.clientHeight;
+            document.getElementById("demo").innerHTML=height;
+
+
+            let colorwidth=(sch*100)/height;
+            console.log(colorwidth);
+
+            let id=document.querySelector(".scrollin");
+            console.log(id);
+            id.style.width=colorwidth+"%";
+ 
+
+
+        }
+
+            
+        
+        console.log(clih +" "+cliw+" "+h+" "+w);
+
+    </script>
+
+</body>
+
+</html>

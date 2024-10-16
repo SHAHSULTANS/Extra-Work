@@ -1,0 +1,39 @@
+<!--Constructor indeed a function -->
+<!-- this keyword inside the function to refer to the newly created object-->
+ <!--Sometime we create many object same time -->
+
+ <!--Without new keyword it doesn't create a new OBJ it works as regular function.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object constructor</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+        function Person(fname,lname,age){
+            this.firstName=fname;
+            this.lastName=lname;
+            this.age=age;
+            console.log(this);
+            
+        }
+        //Person.prototype.add="YES";{}
+        
+        const Me=new Person("shah"," sultan",100);
+        //Me.age=50;
+
+        Person.prototype.fullname=function(){
+            return this.firstName+" "+this.lastName;
+        }
+
+        document.getElementById("demo").innerHTML=Me.fullname();
+    </script>
+    
+</body>
+</html>

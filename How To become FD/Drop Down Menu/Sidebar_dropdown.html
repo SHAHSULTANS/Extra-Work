@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+
+        .row{
+            display: flex;
+
+        }
+        .sidenav{
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            background-color: #333;
+            height:100%;
+            position: fixed;
+           
+            overflow-y:auto;
+        }
+        .main{
+           margin-left: 200px;
+            padding-left: 14px;
+        }
+        .row a{
+            text-decoration: none;
+            padding: 14px 16px;
+            color: rgba(255, 255, 255, 0.77);
+            font-size: 22px;
+
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            display: none;
+            
+        }
+        .dropBtn{
+            padding: 14px 16px;
+            background-color: inherit;
+            border: none;
+            color: rgba(255, 255, 255, 0.73);
+            font-size:22px;
+        }
+        .sidenav a:hover{
+            background-color: #222;
+            color: white; 
+        }
+        .dropBtn:hover{
+            cursor: pointer;
+            background-color: #04AA6a;
+            color: white;
+        }
+        .content a:hover{
+            background-color: red;
+        }
+
+        #three{
+           
+            color:red;
+            display: none;
+        }
+
+        @media screen and (max-width:600px) {
+            .sidenav a, .dropBtn{
+                font-size: 14px;
+               
+            }
+            .sidenav{
+                width: 0%;
+                height: 100%;
+                
+                
+            }
+            .main{
+                margin-left:14px;
+                margin-top: 0;
+                
+            }
+            #three{
+                display:block;
+                position:absolute;
+                padding:6px;
+
+            }
+            
+        }
+        
+
+
+
+  
+       
+
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <a href="#" id="three" onclick="shownav()">&#9776;</a>
+
+        <div class="sidenav">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <div class="dropdown">
+                <button class="dropBtn">dropdown &#9660;</button>
+                <div class="content">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                    <a href="#">link3</a>
+                </div>
+            </div>
+            <a href="#">Search</a>
+           
+
+        </div>
+        <div class="main">
+            <h1>Sidebar Dropdown</h1>
+            <p>click the dropdown button to open the dropdown menu inside the navigation</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nostrum adipisci dolor harum maiores, rerum quos enim est facere architecto perferendis iusto similique blanditiis. Molestiae culpa excepturi explicabo minima odio.</p>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        
+        let dropBtn=document.getElementsByClassName("dropBtn");
+
+        for(let i=0;i<dropBtn.length;i++){
+            dropBtn[i].addEventListener("click",function(){
+                let content=this.nextElementSibling;
+                //console.log(dropBtn);
+
+                if(content.style.display=="flex"){
+                    content.style.display="none";
+                    dropBtn[0].style.backgroundColor="#333";
+                }
+                else
+                {
+                    content.style.display="flex";
+                    dropBtn[0].style.backgroundColor="#04AA6A";
+                }
+
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------
+//----------------------------------------------------
+        function shownav(){
+            let nav=document.querySelector(".sidenav");
+
+            if(nav.style.width=="0px" || nav.style.width==""){
+                console.log(nav);
+                nav.style.width="100%";
+                nav.style.top="40px";
+                nav.style.position="relative";
+            }
+            else{
+                nav.style.width="0";
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

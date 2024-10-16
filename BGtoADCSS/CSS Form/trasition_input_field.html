@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated search button</button></title>
+    <style>
+        input[type=text]{
+            width: 150px;
+            border: 2px solid #CCC;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url("search.png");
+            background-repeat: no-repeat;
+            background-size: 30px 20px;
+            background-position: 6px 12px;
+            padding: 12px 20px 12px 40px;
+            box-sizing: border-box;
+            transition:width 0.8s ease-in-out;
+            /*height: 150px;*/
+            
+        }
+        input[type=text]:focus{
+            width: 100%;
+        }
+        #textarea{
+            width: 100%;
+            height: 150px;
+            font-size: 16px;
+            resize: none;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            padding: 12px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Animated width of search input</h2>
+
+    <form action="">
+        <input type="text" placeholder="search" name="search">
+    </form>
+    <br><br>
+    <textarea name="" id="textarea">some text...
+    </textarea>
+    
+</body>
+</html>

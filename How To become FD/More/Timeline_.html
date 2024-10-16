@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeLine</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color:#474e5d;
+        }
+        .timeline{
+            max-width: 1200px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .timeline::after{
+            content: " ";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            margin-left: -3px;
+            background-color:aqua;
+        }
+        .container{
+            background-color: inherit;
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+       
+
+        .left{
+            left: 0;
+        }
+        .right{
+            left: 50%;
+        }
+        .left::before{
+            content: " ";
+            position: absolute;
+            top: 22px;
+            z-index: 1;
+            right: 20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent
+             transparent white;
+            
+        }
+
+        .right::before{
+            content: " ";
+            position: absolute;
+            top: 22px;
+            z-index: 1;
+            left: 20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent white transparent
+             transparent ;
+            
+        }
+        
+
+
+
+
+
+
+
+
+
+
+        .content{
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .container{
+                width: 100%;
+            }
+            .right{
+                left: 0%;
+            }
+            .timeline::after{
+                display: none;
+            }
+        }
+        
+      
+      
+    </style>
+</head>
+<body>
+
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>2017</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque aperiam odit, sequi, necessitatibus maxime minus quae recusandae ab fugiat, ullam cupiditate voluptatibus sapiente id eum culpa soluta eius eligendi laborum.</p>
+            </div>
+        </div>
+
+
+
+        <div class="container right">
+            <div class="content">
+                <h2>2016</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque aperiam odit, sequi, necessitatibus maxime minus quae recusandae ab fugiat, ullam cupiditate voluptatibus sapiente id eum culpa soluta eius eligendi laborum.</p>
+            </div>
+        </div>
+
+
+        <div class="container left">
+            <div class="content">
+                <h2>2015</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque aperiam odit, sequi, necessitatibus maxime minus quae recusandae ab fugiat, ullam cupiditate voluptatibus sapiente id eum culpa soluta eius eligendi laborum.</p>
+            </div>
+        </div>
+
+
+        <div class="container right">
+            <div class="content">
+                <h2>2014</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque aperiam odit, sequi, necessitatibus maxime minus quae recusandae ab fugiat, ullam cupiditate voluptatibus sapiente id eum culpa soluta eius eligendi laborum.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

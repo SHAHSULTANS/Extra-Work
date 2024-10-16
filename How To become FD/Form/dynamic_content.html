@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS to ::after</title>
+    <style>
+        .content-div {
+            position: relative;
+            padding: 20px;
+            background-color: lightblue;
+        }
+        .content-div::after {
+            content: attr(data-content); /* Fallback if JavaScript is disabled */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-div">This is the main content.</div>
+
+    <script>
+        // Get the innerText of the div
+        let content = document.querySelector('.content-div').innerText;
+
+        // Set a CSS variable with the content
+        document.querySelector('.content-div').setAttribute('data-content', content);
+    </script>
+</body>
+</html>

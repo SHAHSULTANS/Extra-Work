@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+          
+        }
+        .header{
+            padding: 30px;
+            background-color: #f1f1f1;
+            text-align: center;
+            font-size: 30px;
+        }
+    
+       
+        .column{
+            float: left;
+            width: 33.3%;
+            height: 300px;
+        }
+
+
+        div.row::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .footer{
+            background-color:lightcoral;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width:600px) {
+            .column{
+                width: 100%;
+            }
+            
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+
+    </div>
+    <div class="row">
+        <div class="column" style="background-color: #aaa;">Column</div>
+        <div class="column" style="background-color: #bbb;">Column</div>
+        <div class="column" style="background-color: #ccc;">Column</div>
+
+    </div>
+
+    <div class="footer">
+        <h2>Footer</h2>
+
+    </div>
+    
+</body>
+</html>

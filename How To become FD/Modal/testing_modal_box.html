@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Modal Box.</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .modalbox{
+            
+            position: fixed;
+            background-color:rgba(0, 0, 0,0.56);
+            color: white;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height:100%;
+            z-index: 2;
+            animation-name: ex;
+            animation-duration: 1.8s;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes ex {
+            from{top: -300px; opacity: 0.3;}
+            to{top: 0; opacity:0.8;}
+            
+        }
+
+        .modalrow{
+            max-width: 80%;
+            margin: auto;
+            margin-top: 100px;
+            position: relative;
+            background-color: aqua;
+        }
+        .modalheader,.modalfooter{
+            background-color: dodgerblue;
+            padding:8px;
+            text-align:center ;
+        }
+        .modalcontent{
+            padding: 5px;
+        }
+        .check{
+            z-index: 100;
+        }
+        button{
+            background-color:red;
+            color:white;
+            z-index: 50;
+            
+        }
+        .modalrow span{
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            color: red;
+            cursor: pointer;
+            font-size: 20px;
+
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="check">
+    <button onclick="myfun()">Modal</button>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sed deserunt qui assumenda saepe, laborum nam animi enim provident, nesciunt sapiente doloremque cupiditate. Veritatis eum, odit eos libero nobis ipsa!</p>
+   </div>
+
+    <div class="modalbox" id="mymodal">
+        <div class="modalrow">
+            <span style="float: right;" onclick="this.parentElement.parentElement.style.display='none';">X</span>
+            <div class="modalheader">
+                <h2>My Header</h2>
+            </div>
+            <div class="modalcontent">
+                <p>Some text..</p>
+                <p>Some text..</p>
+            </div>
+            <div class="modalfooter">
+                <h2>Modal Footer</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function myfun(){
+            let modalbox=document.querySelector(".modalbox");
+
+            if(modalbox.style.display=="none"|| modalbox.style.display==""){
+                modalbox.style.display="block";
+            }
+        }
+    </script>
+    
+</body>
+</html>

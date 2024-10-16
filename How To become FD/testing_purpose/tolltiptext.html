@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tooltip text css</title>
+    <style>
+        .row{
+            text-align: center;
+            margin-top: 100px;
+            color:white;   
+        }
+        .tooltip{
+            cursor: pointer;
+            position: relative;
+            padding:4px 8px ;
+            background-color: #333;
+            display: inline-block;
+            border-radius: 5px;
+           
+        }
+        .tooltiptext{
+            display: none;
+            
+            position: absolute;
+            left:50%;
+            padding: 2px;
+            border-radius:  2px;
+            top:-120%;
+            background-color:black;
+            transform: translate(-50%);
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+        }
+        @keyframes ex {
+            from{opacity: .1;}
+            to{opacity: 1;}
+            
+        }
+        .arrow{
+            position: absolute;
+            border-width: 8px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%);
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="tooltip" onclick="myfun()">
+            Click text
+            <div class="tooltiptext" style="animation-name: ex;" >
+                coppied
+                <div class="arrow">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function myfun(){
+            let ex=document.querySelector(".tooltiptext");
+            //let x=getComputedStyle(ex);
+            //x.animationName=" Sha"
+
+            ex.style.display="inline-block";
+            console.log(ex.style.animationName);
+
+            setTimeout(function(){
+                //ex.style.animationName="";
+                ex.style.display="none";
+
+            },2000)
+
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Search filter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .searchdiv {
+            position: relative;
+        }
+
+        table,
+        tr {
+            width: 100%;
+            border: 1px solid #aaa;
+            border-collapse: collapse;
+
+        }
+
+        th,
+        td,
+        tr,
+        table {
+            padding: 8px;
+            text-align: center;
+        }
+
+        #search {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            padding-left: 55px;
+        }
+
+        span {
+            position: absolute;
+            left: 5px;
+            top: 50spx;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="searchdiv">
+        <label for="search"><h2>Search From Table</h2></label>
+        <input type="search" name="search" id="search" placeholder="Search here.." onkeyup="myFun()">
+        <span>&#128269;</span>
+    </div>
+
+
+    <div class="row">
+        <table class="tabl">
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Shanto</td>
+                <td>Bangladesh</td>
+            </tr>
+            <tr>
+                <td>Khaled</td>
+                <td>India</td>
+            </tr>
+            <tr>
+                <td>Sultan</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Abdullah</td>
+                <td>peslitine</td>
+            </tr>
+            <tr>
+                <td>Tarikul </td>
+                <td>Bangladesh</td>
+            </tr>
+            <tr>
+                <td>Shah</td>
+                <td>Bangladesh</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+
+
+
+    <script>
+
+        function myFun() {
+            let input = document.getElementById("search").value;
+            input = input.toUpperCase();
+            ///console.log(input);
+
+            let tablrow = document.querySelectorAll(".tabl tr");
+            //console.log(tablrow[0]);
+            console.log(tablrow.length);
+
+            for (let i = 0; i < tablrow.length; i++) {
+                //let name=tablrow[i].querySelector("td").innerHTML;
+                //console.log(name);
+
+                var name = "";
+
+                if (i > 0) {
+                    name = tablrow[i].querySelector("td").innerHTML;
+
+
+                }
+                //console.log(name);
+
+
+
+
+
+                let index = name.toUpperCase().indexOf(input);
+                if (index < 0) {
+                    tablrow[i].style.display = "none";
+
+                }
+                else{
+                    tablrow[i].style.display = "table-row";
+                }
+
+                //console.log(index);
+                tablrow[0].style.display = "table-row";
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

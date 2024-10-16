@@ -1,0 +1,75 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1f1;
+            width: 25%;
+            position: fixed;
+            height: 100%;
+        }
+        li a{
+            text-decoration: none;
+            display: block;
+            padding: 8px 16px;
+            color: black;
+        }
+        li a.active{
+            background-color: #04AA6D;
+            color: white;
+        }
+        li a:hover:not(.active){
+            background-color: #555;
+            color: white;
+        }
+
+        #context{
+            margin-left: 25%;
+            padding: 1px 16px;
+            height: 1000px;
+            overflow: auto;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+    <div id="context">
+        <h2>Fixed Full-height Side Nav</h2>
+        <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo at, amet hic quisquam ipsam consequuntur sequi deleniti impedit consequatur vel culpa eos repudiandae suscipit quod odio nam. Dolor, reprehenderit!</p>
+
+
+
+        <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+    </div>
+    
+</body>
+</html>

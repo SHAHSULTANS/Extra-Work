@@ -1,0 +1,39 @@
+<!-- Syn:insertBefore(newnode,existing node)-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertBefore Method</title>
+</head>
+<body>
+
+    <ul id="mylist">
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+
+
+
+    <script>
+        const newnode=document.createElement("li");
+
+        console.log(newnode);
+        const textnode=document.createTextNode("water");
+        newnode.appendChild(textnode);
+
+
+        const exist=document.getElementById("mylist");
+    
+
+        exist.insertBefore(newnode,exist.children[1]);
+    </script>
+    
+</body>
+</html>
+
+
+<!--Similar for replaceChild -->

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+
+    <script>
+//----------------------------------------------------
+                    /*class ClassName {
+                        constructor() { ... }
+                        method_1() { ... }
+                        method_2() { ... }
+                        method_3() { ... }
+                    }
+                         */
+
+
+
+   //Use keyword class to create class.
+   //Class always have a Contructor.
+
+   //Class is not a js object. it is a template of object.
+
+
+
+
+   
+        class Car{
+            constructor(name,year){
+                this.name=name;
+                this.year=year;
+            }
+
+
+            //Inside of the class methods are not started with function keyword.
+            age(){
+                const dat=  new Date();
+                //return date.getFullYear-this.year;
+                
+                return dat.getFullYear()-this.year;
+            }
+        }
+
+
+
+
+
+        const mycar1=new Car("BMW",2022);
+        const mycar2=new Car("GTR",2020);
+
+
+       // document.getElementById("demo").innerHTML=mycar1.name+" "+mycar2.name;
+
+       document.getElementById("demo").innerHTML=mycar1.age();
+    </script>
+    
+</body>
+</html>

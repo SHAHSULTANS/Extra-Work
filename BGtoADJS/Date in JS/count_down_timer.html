@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count down_timer</title>
+</head>
+<body>
+    <h2>Count Down Timer</h2>
+
+    <p id="demo"></p>
+
+
+
+    <script>
+        countdown();
+        function countdown(){
+            let presenttime=new Date().getTime();
+
+            let alarm=new Date(2024,6,16,23,36).getTime();
+
+           let epic=alarm-presenttime;
+
+            let day=Math.floor( epic/(86400*1000));
+            let hour=Math.floor((epic%(86400*1000))/(3600*1000));
+            let minite=Math.floor(epic%(1000*3600)/(1000*60));
+
+            let second =Math.floor(epic%(1000*60)/(1000));
+
+
+            
+            
+
+
+
+            document.getElementById("demo").innerHTML=day+" day "+hour+" hour "+ minite+" minites "+second+" seconds";
+        }
+        setInterval(countdown,1000);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- appendChild() moves the element to currrect position to the new position. It's effectively cutting the element from current positon and pasting it into new position.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendChild method</title>
+</head>
+<body>
+
+    <ul id="mylist1">
+        <li>Tea</li>
+        <li>coffe</li>
+    </ul>
+    <ul id="mylist2">
+        <li>Milk</li>
+        <li>Juice</li>
+    </ul>
+
+
+    <script>
+        element=document.getElementById("mylist2").lastElementChild;
+        console.log(element);
+        document.getElementById("mylist1").appendChild(element);
+    </script>
+    
+</body>
+</html>

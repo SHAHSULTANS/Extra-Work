@@ -1,0 +1,23 @@
+<!--firstElementChild returns the first child of a parent node. It ignores text nodes, comment nodes and othe non elment node. -->
+
+<!--firstChild return the first child of a parent node. It include all type of nodes such as text nodes, comments nodes, and element nodes. -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="example">
+  <!-- This is a comment -->
+  Text node
+  <p>Paragraph</p>
+</div>
+
+<script>
+  const parent = document.getElementById('example');
+
+  console.log(parent.firstChild); // Logs: #comment (or "Text node" depending on browser implementation)
+  console.log(parent.firstElementChild); // Logs: <p>Paragraph</p>
+</script>
+
+</body>
+</html>

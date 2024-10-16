@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Text</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: cursive;
+        }
+        .glow{
+            font-size: 80px;
+            color: #fff;
+            text-align: center;
+            box-shadow:  0 0 40px red;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow{
+            from{text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px rgb(174, 127, 39), 0 0 35px rgb(190, 233, 22);}
+            to{text-shadow: 0 0 10px white, 0 0 20px rgb(113, 208, 45);};
+            
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="glow">GLOWING TEXT</h1>
+    
+</body>
+</html>
